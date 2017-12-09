@@ -1,0 +1,46 @@
+{% extends 'ms.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .con {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow-x: hidden !important;
+        }
+
+    </style>
+
+    <div class="w3-bar w3-orange w3-border w3-border-white w3-round">
+        <div class="w3-bar-item" style="text-align: center;color:white;"> FEEDBACKS</div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table con">
+            <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Subject</th>
+                <th>Email</th>
+                <th>Message</th>
+                {#                <th>Show Message</th>#}
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in comment %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.subject }}</td>
+                    <td>{{ i.Email }}</td>
+                    <td>{{ i.message }}</td>
+                    {#                <td><a class="btn btn-success w3-btn" href="#" style="background-color: darkolivegreen;">Show details</a> </td>#}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+{% endblock %}

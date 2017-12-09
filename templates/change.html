@@ -1,0 +1,75 @@
+{% extends 'ms.html' %}
+{% load static %}
+
+{% block content %}
+    {% if msg %}
+        <div id="alertBox" class="w3-{{ message.tags }}">
+            <button id="bannerClose" class="w3-right w3-text-black w3-large" onclick="closeModal('alertBox')"
+                    style="background-color: transparent; border: none;">&times;
+            </button>
+            <div class="w3-center">
+                <label id="alert" class="w3-text-white w3-large">{{ msg }}</label>
+            </div>
+        </div>
+    {% endif %}
+    <style>
+        .con {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow-x: hidden !important;
+        }
+
+    </style>
+
+    <div class="w3-bar w3-orange w3-border w3-border-white w3-round">
+        <div class="w3-bar-item" style="text-align: center;color:white;">EDIT | DELETE</div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table con">
+            <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Product-Name</th>
+                <th>Supplier-Name</th>
+                <th>Price</th>
+                <th> Category of Food</th>
+                <th>Category for Wear</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for o in edits %}
+                <tr>
+                    <td>{{ o.id }}</td>
+                    <td>{{ o.product_name }}</td>
+                    <td>{{ o.supplier }}</td>
+                    <td>{{ o.price }}</td>
+                    <td>{{ o.category }}</td>
+                    <td>{{ o.section }}</td>
+                    <td>{{ o.image.url }}</td>
+                    <td>
+                        <a type="button" class="w3-btn" href="{% url 'edit' o.id %}" id="{{ o.id }}"
+                           name="{{ o.id }}"
+                           style="background-color: orange;">
+                            Edit
+                        </a>
+                    </td>
+                    <td>
+                        <a type="button" class="w3-btn" href="{% url 'prod_del' o.id %}" id="{{ o.id }}"
+                           name="{{ o.id }}"
+                           style="background-color: orange;">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}

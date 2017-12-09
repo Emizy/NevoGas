@@ -1,0 +1,422 @@
+#k {
+    color: white !important;
+    font-size: medium;
+    font-style: normal;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+#t {
+    font-size: 15px;
+    font-style: oblique;
+    font-family: Ebrima;
+    margin-right: 25px;
+    white-space: nowrap;
+}
+
+.navbar-brand {
+    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive !important;
+    color: white !important;
+}
+
+/*--login--*/
+.login {
+    padding: 6em 0;
+}
+
+.main-agileits {
+    width: 30%;
+    margin: 0em auto;
+    box-shadow: 0px 0px 15px 0px #D6D6D6;
+    -o-box-shadow: 0px 0px 15px 0px #D6D6D6;
+    -moz-box-shadow: 0px 0px 15px 0px #D6D6D6;
+    -webkit-box-shadow: 0px 0px 15px 0px #D6D6D6;
+    padding: 3em;
+    box-sizing: border-box;
+}
+
+.key > input[type="text"], .key input[type="password"] {
+    width: 89%;
+    padding: 10px 10px;
+    font-size: 1em;
+    border: none;
+    border-bottom: none;
+    outline: none;
+    color: #999;
+    float: left;
+    background: none;
+}
+
+.key > i {
+    float: left;
+    color: #999;
+    font-size: 1.1em;
+    padding: 13px;
+}
+
+.key {
+    background: #fff;
+    border: 1px solid #999;
+    margin-bottom: 2em;
+}
+
+.form-w3agile h3 {
+    color: #029241;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.form-w3agile input[type="submit"] {
+    background: #fdb515;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    width: 32%;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.form-w3agile input[type="submit"]:hover {
+    background: #029241;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.forg > a {
+    text-decoration: none;
+    color: #029241;
+    font-size: 1em;
+}
+
+.forg > a:hover {
+    color: #fdb515;
+}
+
+.forg-left {
+    float: left;
+}
+
+.forg-right {
+    float: right;
+}
+
+.form1 > input[type="submit"] {
+    margin-bottom: 0;
+}
+
+/*--//login--*/
+@media (max-width: 1440px) {
+    .main-agileits {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .main-agileits {
+        width: 38%;
+    }
+}
+
+@media (max-width: 1080px) {
+
+    .main-agileits {
+        width: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .main-agileits {
+        width: 65%;
+    }
+
+    .login {
+        padding: 4em 0;
+    }
+
+    .product {
+        padding: 3em 0 3em;
+    }
+
+    .pro-1 {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .login {
+        padding: 4em 0;
+    }
+
+    .main-agileits {
+        width: 78%;
+    }
+
+    .login {
+        padding: 3em 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-agileits {
+        width: 90%;
+        padding: 2em;
+    }
+
+    .form-w3agile > h3 {
+        margin-bottom: 1em;
+    }
+
+    .key > i {
+        padding: 13px 13px 13px 10px;
+    }
+
+    .login {
+        padding: 2em 0;
+    }
+
+    .col-m {
+        padding: 0.5em;
+    }
+}
+
+@media (max-width: 414px) {
+    .main-agileits {
+        width: 90%;
+        padding: 1em;
+    }
+
+    .key > input[type="text"], .key input[type="password"] {
+        width: 84%;
+        padding: 8px 10px;
+    }
+
+    .key > i {
+        padding: 10px 0px 10px 10px;
+    }
+
+    .form-w3agile > input[type="submit"] {
+        padding: 7px 0;
+        margin-bottom: 25px;
+    }
+
+    .login {
+        padding: 2em 0;
+    }
+
+    .form-w3agile > h3 {
+        margin-bottom: 0.8em;
+    }
+
+}
+
+/*-- //footer-top --*/
+.footer-bottom {
+    text-align: center;
+    margin: 4em 0 0;
+}
+
+.footer-bottom h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-bottom h2 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-bottom h2 span {
+    font-size: 12px;
+    display: block;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif;
+    padding-top: 6px;
+}
+
+.footer-bottom h2 b {
+    font-size: 10px;
+    background: #CC2127;
+    font-weight: normal;
+    padding: 3px;
+    display: inline-block;
+    line-height: 10px;
+    position: absolute;
+    top: 9px;
+    left: -7px;
+}
+
+p.fo-para {
+    font-size: 1em;
+    line-height: 2em;
+    color: #fff;
+    padding: 1em 0 3em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.fo-grid1 p {
+    font-size: 1em;
+    line-height: 2em;
+    color: #fff;
+}
+
+.fo-grid1 p a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.fo-grid1 p a:hover {
+    color: #FAB005;
+}
+
+.fo-grid1 p i {
+    margin-right: 7px;
+}
+
+.social-fo li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-fo li a {
+    width: 35px;
+    height: 35px;
+    display: block;
+    background: #3B5998;
+    border-radius: 100px;
+    color: #fff;
+    line-height: 2.5em;
+}
+
+.social-fo li a:hover {
+    transform: rotate(-360deg);
+}
+
+.social-fo li a.twi {
+    background: #4099FF;
+}
+
+.social-fo li a.pin {
+    background: #CD2830;
+}
+
+.social-fo li a.dri {
+    background: #E35E90;
+}
+
+.address {
+    margin-top: 2em;
+}
+
+/*-- //footer-top --*/
+.footer {
+    background: #353535;
+    padding: 5em 0;
+    margin-bottom: 0px !important;
+}
+
+.footer-grid h3 {
+    color: #fff;
+    font-size: 1.7em;
+    margin-bottom: 1em;
+}
+
+.footer-grid p {
+    color: #ABABAB;
+    line-height: 2.2em;
+    font-size: 14px;
+}
+
+.footer-grid ul li {
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 2.2em;
+    color: #ABABAB;
+
+}
+
+.footer-grid ul li a {
+
+    color: #ABABAB;
+}
+
+.footer-grid ul li a:hover {
+    color: #FAB005;
+}
+
+.copy-right p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 4em;
+}
+
+.copy-right p a {
+    color: #fff;
+}
+
+.copy-right p a:hover {
+    color: #E21737;
+}
+
+/*-- //footer --*/
+
+/*--offer-*/
+.offer {
+    position: absolute;
+
+    right: 15px;
+    border: 2px solid #029241;
+    border-radius: 100px 0 0 100px;
+    padding: 1px;
+    z-index: 498;
+}
+
+.offer > p {
+    background: #029241;
+    border-radius: 120px 0px 0px 120px;
+    text-align: center;
+    line-height: 0em !important;
+    font-size: 1em !important;
+    padding: 7px;
+    color: white;
+}
+
+.go {
+    border-radius: 100px 100px 100px 100px;
+    border: 1px solid orange;
+    background-color: white;
+
+}
+
+.btn-block {
+    background-color: orange;
+}
+
+.soffer {
+    font-size: 2em;
+    color: #029241;
+    margin-bottom: 0.5em;
+    text-align: center;
+    border-radius: 100px 100px 100px 100px;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+
+}
+
+/*--end offer--*/
+.spec h3 {
+    font-size: 2.8em;
+}

@@ -1,0 +1,462 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %} <title> Check-Out </title>{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> <!-- font-awesome icons -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/w3schol.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+    <!-- //web-fonts -->
+</head>
+<body>
+{#<div class="container" href="#checkout" data-toggle="modal">#}
+{#    <i class="glyphicon glyphicon-shopping-cart"#}
+{#       style="position: fixed;font-size: 40px; top: 15%; left: 85%; z-index: 498;"><span#}
+{#            class="badge badge-warning tiny" style="position: absolute;font-size: 15px;width: 10px !important;#}
+{#min-width: 20px;#}
+{#top: 0; right: 0">{{ request.session.cart|length }}</span></i>#}
+{#</div>#}
+
+<!-- Navigation -->
+<style>
+    /* Style The Dropdown Button */
+    .dropbtn {
+        background-color: orange;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+        z-index: 20;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: orange;
+    }
+
+    .searchg {
+        padding-top: 4%;
+        bottom: 2%;
+        padding-left: 7%;
+    }
+
+    div.panel {
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: left;
+    }
+
+    .raw {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 50%;
+    }
+
+</style>
+<nav class="navbar navbar-default navbar-fixed w3-green"
+     style="background-color: orange; padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"
+                    style="background-color: orange">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{% url 'index' %}" class="navbar-brand">NevoGas</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="margin-top:40px; margin-bottom: 20px">
+    <div class="w3-bar w3-green w3-border w3-border-white w3-round">
+        <div class="w3-bar-item" style="text-align: center;color:white; font-size: 1.0em;"> Kindly input your location
+            for delivery
+        </div>
+    </div>
+</div>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th {
+        background-color: orange;
+        color: white !important;
+    }
+
+    input[type=text], select {
+        width: 100%;
+        padding: 8px 17px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    .checkouty {
+        border-radius: 1em;
+        padding: 1%;
+        margin-bottom: 5%;
+
+    }
+
+
+</style>
+
+<div class="container checkouty w3-border">
+    <form id="checkout_form" class="form" action="/checkout/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fname">fullname</label>
+            <input type="text" id="fname" class="form-control" name="Name" placeholder="Your name..">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control" name="Email" placeholder="Email">
+        </div>
+        <div class="form-group"><label for="phone">Phone number</label>
+            <input type="text" id="phone" class="form-control" name="Phone" placeholder="081XXXXXXX">
+        </div>
+
+        <script>
+            function addCharge(value, total) {
+                if (value !== "" && value !== null) {
+                    var arr = value.split(":");
+                    if (arr[1] !== "" && arr[1] !== null) {
+                        document.getElementById("del_charge").innerHTML = arr[1];
+                        document.getElementById("tot_charge").innerHTML = (parseInt(total) + parseInt(arr[1])).toString();
+                        var del = document.getElementById("del_charge").innerHTML = arr[1];
+                    }
+                }
+                else {
+                    document.getElementById("del_charge").innerHTML = "";
+                    document.getElementById("tot_charge").innerHTML = total;
+                }
+            }
+        </script>
+        <div class="form-group"><label for="phone">Location</label>
+            <select name="loc" required onchange="addCharge(this.value, '{{ request.session.grandtotal }}');">
+                <option value="">- Select Location -</option>
+                {% for i in locs %}
+                    <option value="{{ i.id }}:{{ i.charge }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="comment">Adress:</label>
+            <textarea class="form-control" rows="4" id="comment" name="address"
+                      placeholder="Enter your Address"></textarea>
+        </div>
+        <div class="container">
+            <p id="t" style="font-size: 20px; !important; font-style: normal;">Delivery fee: <span
+                    id="del_charge"></span></p>
+            <p id="t" style="font-size: 20px; !important; font-style: normal;">
+                Total: {{ request.session.grandtotal }}</p>
+            <p id="t" style="font-size: 20px; !important; font-style: normal;">
+                Sum Total: <span id="tot_charge">{{ request.session.grandtotal }}</span></p>
+
+        </div>
+        <div class="container" style="left: 20%;">
+            <div id="{{ i.id }}_csrf_holder">
+                {% csrf_token %}
+            </div>
+            <script>
+                var div = document.getElementById("{{ i.id }}_csrf_holder");
+                var csrf = div.getElementsByTagName('input')[0].value;             </script>
+            <div class="w3-center">
+                <div class="w3-bar">
+                    <button type="button" style="margin-top: 1%;margin-left: 0%; background-color: orange !important;"
+                    class="w3-button w3-hover-orange w3-text-white w3-border w3-border-orange"
+                    onclick="paystack('{{ request.session.grandtotal }}',csrf);"><i class="fa fa-credit-card"
+                                                                                    aria-hidden="true"></i>
+                Pay
+            </button>
+                    <button href="#" class="w3-button w3-hover-orange w3-text-orange w3-hover-text-white w3-border w3-border-orange">Pay on-delivery <i
+                    class="fa fa-credit-card" aria-hidden="true"></i> </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+</div>
+</form>
+
+</div>
+
+
+<!--footer-->
+<div class="footer" style="overflow-x: hidden;">
+    <div class="container">
+        <div class="col-md-4 footer-grid">
+            <h3> Hotlines </h3>
+            <ul>
+                <li><a href="#">Eunice : 08100828813 </a></li>
+                <li><a href="#">Rajah : 07060569963 </a></li>
+                <li><a href="#">Emizy : 08139572244 </a></li>
+
+            </ul>
+            <ul>
+                <li><a href="http://aauaforum.com/dev.php"> Meet Developers </a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 footer-grid ">
+            <h3>Other portal</h3>
+            <ul>
+                <li><a href="#">AAUAFORUM</a></li>
+                <li><a href="#">ALUTA-PORTAL</a></li>
+                <li><a href="#">ARTICLES-PORTAL</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 footer-grid">
+            <h3>Social Media</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copy-right">
+                <p> &copy; 2017 NevoGas. All Rights Reserved | Design by <a href=#">
+                    EMIZY</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //footer-->
+<!-- modal-faqx -->
+<div class="modal bnr-modal fade" id="faqx" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                {#                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>#}
+                <div class="modal-w3lstext">
+                    <div class="row">
+                        <div class="colmd-12 col-sm-12">
+                            <h2 style="color:red;"><span class="glyphicon glyphicon-modal-window"></span> How Its Works
+                            </h2>
+                            <p style="font-size: large;"><span class="badge badge-success">1</span> Visit
+                                www.food4all.com </p>
+                            <p style="font-size: large;"><span class="badge badge-primary">2</span> Register in other to
+                                gain access to Orderr for your favorite meal</p>
+                            <p style="font-size: large;"><span class="badge badge-primary">3</span> Login to your
+                                account to place your Order and its will e deliver within a short period </p>
+                            <br>
+                            <h2 style="color:red;"><span class="glyphicon glyphicon-cutlery"></span> How To Order </h2>
+                            <p style="font-size: large;"><span class="badge badge-success">1</span> Select your location
+                                and the category of your goods </p>
+                            <p style="font-size: large;"><span class="badge badge-success">2</span> Click continue to
+                                proceed to the Shopping page </p>
+                            <p style="font-size: large;"><span class="badge badge-success">3</span> Add your favorite
+                                Foods / Snacks to the cart </p>
+                            <p style="font-size: large;"><span class="badge badge-success">4</span> Click the floating
+                                cart to check-outs </p>
+                            <p style="font-size: large;"><span class="badge badge-success">5</span> Enter your bank
+                                details on the payment portal </p>
+                            <p style="font-size: large;"><span class="badge badge-success">6</span> Then relax you will
+                                recieve a call from us for your package </p>
+                            <p style="font-size: large;"><span class="badge badge-success">7</span> All delievery
+                                attract #200naira charges </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal-faqx-->
+<!-- modal-contact -->
+<div class="modal bnr-modal fade" id="contact" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                <!--<img src="images/g2.jpg" class="img-responsive" alt=""/>-->
+                <div class="modal-w3lstext">
+                    <h4>Contact - Us</h4>
+                    <form action="{% url 'contact' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" class="form-control" name="Username" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email </label>
+                            <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+                                   placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea type="text" class="form-control" name="message"
+                                      placeholder="Write your message "></textarea>
+                        </div>
+                        <input type="submit" name="submit" class="btn btn-warning w3-btn" value="Submit"
+                               style="background-color: orange;margin-left: 70%;">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal-contact-->
+<!-- modal-about -->
+<div class="modal bnr-modal fade" id="about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>
+                <div class="modal-w3lstext">
+                    <h4>Blanditiis deleniti</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis
+                        felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam
+                        mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie
+                        cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit
+                        amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis
+                        urna. Etiam pulvinar metus neque, eget porttitor massa vulputate in. Fusce lacus purus, pulvinar
+                        ut lacinia id, sagittis eumi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal-about-->
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+
+
+<!-- //menu-js -->
+<!-- Progressive-Effects-Animation-JavaScript -->
+<script type="text/javascript" src="{% static 'js/numscroller-1.0.js' %}"></script>
+<!-- //Progressive-Effects-Animation-JavaScript -->
+<!-- jarallax -->
+<script src=" {% static 'js/SmoothScroll.min.js' %}"></script>
+{#<script src=" {% static 'js/jarallax.js' %}"></script>#}
+{#<script type="text/javascript">#}
+{#    /* init Jarallax */#}
+{#    $('.jarallax').jarallax({#}
+{#        speed: 0.5,#}
+{#        imgWidth: 1366,#}
+{#        imgHeight: 768#}
+{#    })#}
+{#</script>#}
+<!-- //jarallax -->
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src=" {% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
+
+
+
+

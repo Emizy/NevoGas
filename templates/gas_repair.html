@@ -1,0 +1,783 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> <!-- font-awesome icons -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/w3schol.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <!-- //web-fonts -->
+</head>
+<body>
+{#<div class="container" href="#checkout" data-toggle="modal">#}
+{#    <i class="glyphicon glyphicon-shopping-cart"#}
+{#       style="position: fixed;font-size: 40px; top: 15%; left: 85%; z-index: 498;"><span#}
+{#            class="badge badge-warning tiny w3-green" style="position: absolute;font-size: 15px;width: 10px !important;#}
+{#min-width: 20px;#}
+{#top: 0; right: 0">{{ request.session.cart|length }}</span></i>#}
+{#</div>#}
+
+<!-- Navigation -->
+<style>
+    /* Style The Dropdown Button */
+    .dropbtn {
+        background-color: orange;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+        z-index: 20;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: orange;
+    }
+
+    .searchg {
+        padding-top: 4%;
+        bottom: 2%;
+        padding-left: 7%;
+    }
+
+    div.panel {
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: left;
+    }
+
+    .raw {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 50%;
+    }
+
+    .input-group-addon, .input-group-btn, .input-group .form-control {
+        display: block !important;
+
+    }
+
+</style>
+
+<style>
+    #k {
+        color: white !important;
+        font-size: medium;
+        font-style: normal;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    }
+
+    #t {
+        font-size: 15px;
+        font-style: oblique;
+        font-family: Ebrima;
+        margin-right: 25px;
+    }
+
+    .navbar-brand {
+        font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive !important;
+        color: white !important;
+    }
+
+    /*--login--*/
+    .login {
+        padding: 6em 0;
+    }
+
+    .main-agileits {
+        width: 30%;
+        margin: 0em auto;
+        box-shadow: 0px 0px 15px 0px #D6D6D6;
+        -o-box-shadow: 0px 0px 15px 0px #D6D6D6;
+        -moz-box-shadow: 0px 0px 15px 0px #D6D6D6;
+        -webkit-box-shadow: 0px 0px 15px 0px #D6D6D6;
+        padding: 3em;
+        box-sizing: border-box;
+    }
+
+    .key > i {
+        float: left;
+        color: #999;
+        font-size: 1.1em;
+        padding: 13px;
+    }
+
+    .key {
+        background: #fff;
+        border: 1px solid #999;
+        margin-bottom: 2em;
+    }
+
+    .form-w3agile h3 {
+        color: #029241;
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    .forg > a {
+        text-decoration: none;
+        color: #029241;
+        font-size: 1em;
+    }
+
+    .forg-left {
+        float: left;
+    }
+
+    .forg-right {
+        float: right;
+    }
+
+    .form1 > input[type="submit"] {
+        margin-bottom: 0;
+    }
+
+    /*--//login--*/
+    @media (max-width: 1440px) {
+        .main-agileits {
+            width: 35%;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        .main-agileits {
+            width: 38%;
+        }
+    }
+
+    @media (max-width: 1080px) {
+
+        .main-agileits {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 991px) {
+
+        .main-agileits {
+            width: 65%;
+        }
+
+        .login {
+            padding: 4em 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .login {
+            padding: 4em 0;
+        }
+
+        .main-agileits {
+            width: 78%;
+        }
+
+        .login {
+            padding: 3em 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .main-agileits {
+            width: 90%;
+            padding: 2em;
+        }
+
+        .form-w3agile > h3 {
+            margin-bottom: 1em;
+        }
+
+        .key > i {
+            padding: 13px 13px 13px 10px;
+        }
+
+        .login {
+            padding: 2em 0;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .main-agileits {
+            width: 90%;
+            padding: 1em;
+        }
+
+        .key > i {
+            padding: 10px 0px 10px 10px;
+        }
+
+        .form-w3agile > input[type="submit"] {
+            padding: 7px 0;
+            margin-bottom: 25px;
+        }
+
+        .login {
+            padding: 2em 0;
+        }
+
+        .form-w3agile > h3 {
+            margin-bottom: 0.8em;
+        }
+
+    }
+
+    /*-- //footer-top --*/
+    .footer-bottom {
+        text-align: center;
+        margin: 4em 0 0;
+    }
+
+    .footer-bottom h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.5em;
+        display: inline-block;
+        position: relative;
+    }
+
+    .footer-bottom h2 a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-bottom h2 span {
+        font-size: 12px;
+        display: block;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-family: 'Noto Sans', sans-serif;
+        padding-top: 6px;
+    }
+
+    .footer-bottom h2 b {
+        font-size: 10px;
+        background: #CC2127;
+        font-weight: normal;
+        padding: 3px;
+        display: inline-block;
+        line-height: 10px;
+        position: absolute;
+        top: 9px;
+        left: -7px;
+    }
+
+    p.fo-para {
+        font-size: 1em;
+        line-height: 2em;
+        color: #fff;
+        padding: 1em 0 3em;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .fo-grid1 p {
+        font-size: 1em;
+        line-height: 2em;
+        color: #fff;
+    }
+
+    .fo-grid1 p a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .fo-grid1 p a:hover {
+        color: #FAB005;
+    }
+
+    .fo-grid1 p i {
+        margin-right: 7px;
+    }
+
+    .social-fo li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+    .social-fo li a {
+        width: 35px;
+        height: 35px;
+        display: block;
+        background: #3B5998;
+        border-radius: 100px;
+        color: #fff;
+        line-height: 2.5em;
+    }
+
+    .social-fo li a:hover {
+        transform: rotate(-360deg);
+    }
+
+    .social-fo li a.twi {
+        background: #4099FF;
+    }
+
+    .social-fo li a.pin {
+        background: #CD2830;
+    }
+
+    .social-fo li a.dri {
+        background: #E35E90;
+    }
+
+    .address {
+        margin-top: 2em;
+    }
+
+    /*-- //footer-top --*/
+    .footer {
+        background: #353535;
+        padding: 5em 0;
+        margin-bottom: 0px !important;
+    }
+
+    .footer-grid h3 {
+        color: #fff;
+        font-size: 1.7em;
+        margin-bottom: 1em;
+    }
+
+    .footer-grid p {
+        color: #ABABAB;
+        line-height: 2.2em;
+        font-size: 14px;
+    }
+
+    .footer-grid ul li {
+        list-style-type: none;
+        font-size: 14px;
+        line-height: 2.2em;
+        color: #ABABAB;
+
+    }
+
+    .footer-grid ul li a {
+
+        color: #ABABAB;
+    }
+
+    .footer-grid ul li a:hover {
+        color: #FAB005;
+    }
+
+    .copy-right p {
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 4em;
+    }
+
+    .copy-right p a {
+        color: #fff;
+    }
+
+    .copy-right p a:hover {
+        color: #E21737;
+    }
+
+    {#Edward#}
+    .w3-error {
+        color: #fff !important;
+        background-color: #B71C1C !important
+    }
+
+    .w3-success {
+        color: #fff !important;
+        background-color: #4CAF50 !important
+    }
+
+    /*-- //footer --*/
+</style>
+<nav class="navbar navbar-default navbar-fixed w3-green"
+     style="padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle w3-green" data-toggle="collapse" data-target="#storenav"
+            >
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;">NevoGas</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="storenav">
+            <ul class="nav navbar-nav" style="margin-left: 20px ;">
+                <li><a href="#contact" id="k" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span>
+                    Contact-Us</a>
+                </li>
+                <li><a href="#about" id="k" data-toggle="modal"><span
+                        class="glyphicon glyphicon-folder-open"></span>
+                    About-Us</a>
+                </li>
+                <li><a href="#faqx" id="k" data-toggle="modal"><span class="glyphicon glyphicon-pushpin"></span>
+                    Faqx</a>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 3%;">
+                <li>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-top: 0px;margin-top: 0px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <a href="#"> <img class="first-slide" src="{% static 'images/ba.jpg' %}" alt="First slide"></a>
+
+        </div>
+        <div class="item">
+            <a href="#"> <img class="second-slide " src="{% static 'images/ba1.jpg' %}" alt="Second slide"></a>
+
+        </div>
+        <div class="item">
+            <a href="#"><img class="third-slide " src="{% static 'images/ba2.jpg' %}" alt="Third slide"></a>
+
+        </div>
+    </div>
+
+</div><!-- /.carousel -->
+<br>
+<!--form-->
+
+<br>
+<div class="login">
+
+    <div class="main-agileits">
+        <div class="form-w3agile">
+            {% if messages %}
+                {% for message in messages %}
+                    <div id="alertBox" class="w3-{{ message.tags }}">
+                        <button id="bannerClose" class="w3-right w3-text-black w3-large"
+                                onclick="closeModal('alertBox')"
+                                style="background-color: transparent; border: none;">&times;
+                        </button>
+                        <div class="w3-center">
+                            <label id="alert" class="w3-text-white w3-large" style="font-size: 5px;">{{ message }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="w3-panel w3-green">
+                <h5 class="w3-center w3-text-white" style="font-size:2em">Gas-Repair Form</h5>
+            </div>
+            <div class="clearfix"></div>
+            <form action="#" method="post" action="#" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" id="fname" class="form-control" name="fname"
+                           placeholder="Enter your fullname" required>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="email" class="form-control" name="email"
+                           placeholder="Enter your email" required>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="phone" class="form-control" name="phone"
+                           placeholder="Enter your Phone number" required>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" name="location" id="location" required>
+                        <option value="">---Location-----</option>
+                        <option value="Provisions">Alagbaka</option>
+                        <option value="Raw Food">Leo</option>
+                        <option value="Snacks">Champion</option>
+                    </select>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" id="address" name="address"
+                              placeholder="Enter your full address" required></textarea>
+                    <div class="clearfix"></div>
+                </div>
+                <hr>
+                <div class="w3-center">
+                    <h4 class="w3-text-green">Gas Repair Question</h4>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="cooker" class="form-control" name="cooker"
+                           placeholder="Enter the name of Gas equipment" required>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" id="descrip" name="descrip"
+                              placeholder="Description of what got spoilt" required></textarea>
+                    <div class="clearfix"></div>
+                </div>
+                <hr>
+                <div class="w3-center">
+                    <h5 class="w3-text-green">Upload picture of the spoilt Gas-cooker </h5>
+                </div>
+
+                <div class="form-group">
+                    <input type="file" name="image1" id="image1" required>
+                    <p class="help-block">Upload Equipment image.</p>
+                </div>
+
+                <div class="form-group">
+                    <input type="file" name="image2" id="image2" required>
+                    <p class="help-block">Upload Equipment image.</p>
+                </div>
+                <div class="w3-center">
+                    <input type="submit"
+                           class="w3-button w3-green w3-text-white w3-hover-green w3-hover-text-white w3-round-xxlarge"
+                           value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--footer-->
+<div class="footer" style="overflow-x: hidden;">
+    <div class="container">
+        <div class="col-md-4 footer-grid">
+            <h3> Hotlines </h3>
+            <ul>
+                <li><a href="#">Eunice : 08100828813 </a></li>
+                <li><a href="#">Rajah : 07060569963 </a></li>
+                <li><a href="#">Emizy : 08139572244 </a></li>
+
+            </ul>
+            <ul>
+                <li><a href="http://aauaforum.com/dev.php"> Meet Developers </a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 footer-grid ">
+            <h3>Other portal</h3>
+            <ul>
+                <li><a href="#">AAUAFORUM</a></li>
+                <li><a href="#">ALUTA-PORTAL</a></li>
+                <li><a href="#">ARTICLES-PORTAL</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 footer-grid">
+            <h3>Social Media</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copy-right">
+                <p> &copy; 2017 NevoGas. All Rights Reserved | Design by <a href=#">
+                    EMIZY</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //footer-->
+<!-- modal-faqx -->
+<div class="modal bnr-modal fade" id="faqx" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                {#                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>#}
+                <div class="modal-w3lstext">
+                    <div class="row">
+                        <div class="colmd-12 col-sm-12">
+                            <h2 style="color:red;"><span class="glyphicon glyphicon-modal-window"></span> How Its Works
+                            </h2>
+                            <p style="font-size: large;"><span class="badge badge-success">1</span> Visit
+                                www.food4all.com </p>
+                            <p style="font-size: large;"><span class="badge badge-primary">2</span> Register in other to
+                                gain access to Orderr for your favorite meal</p>
+                            <p style="font-size: large;"><span class="badge badge-primary">3</span> Login to your
+                                account to place your Order and its will e deliver within a short period </p>
+                            <br>
+                            <h2 style="color:red;"><span class="glyphicon glyphicon-cutlery"></span> How To Order </h2>
+                            <p style="font-size: large;"><span class="badge badge-success">1</span> Select your location
+                                and the category of your goods </p>
+                            <p style="font-size: large;"><span class="badge badge-success">2</span> Click continue to
+                                proceed to the Shopping page </p>
+                            <p style="font-size: large;"><span class="badge badge-success">3</span> Add your favorite
+                                Foods / Snacks to the cart </p>
+                            <p style="font-size: large;"><span class="badge badge-success">4</span> Click the floating
+                                cart to check-outs </p>
+                            <p style="font-size: large;"><span class="badge badge-success">5</span> Enter your bank
+                                details on the payment portal </p>
+                            <p style="font-size: large;"><span class="badge badge-success">6</span> Then relax you will
+                                recieve a call from us for your package </p>
+                            <p style="font-size: large;"><span class="badge badge-success">7</span> All delievery
+                                attract #200naira charges </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal-faqx-->
+<!-- modal-contact -->
+<div class="modal bnr-modal fade" id="contact" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                <!--<img src="images/g2.jpg" class="img-responsive" alt=""/>-->
+                <div class="modal-w3lstext">
+                    <h4>Contact - Us</h4>
+                    <form action="{% url 'contact' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Subject</label>
+                            <input type="text" class="form-control" name="subject"
+                                   placeholder="Enter your complain subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email </label>
+                            <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+                                   placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea type="text" class="form-control" name="message"
+                                      placeholder="Write your message "></textarea>
+                        </div>
+                        <input type="submit" name="submit" class="btn btn-warning w3-btn" value="Submit"
+                               style="background-color: orange;margin-left: 70%;">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal-contact-->
+<!-- modal-about -->
+<div class="modal bnr-modal fade" id="about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>
+                <div class="modal-w3lstext">
+                    <h4>Blanditiis deleniti</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis
+                        felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam
+                        mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie
+                        cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit
+                        amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis
+                        urna. Etiam pulvinar metus neque, eget porttitor massa vulputate in. Fusce lacus purus, pulvinar
+                        ut lacinia id, sagittis eumi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src=" {% static 'js/SmoothScroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src=" {% static 'js/easing.js' %}"></script>
+
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

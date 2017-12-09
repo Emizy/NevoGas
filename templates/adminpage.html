@@ -1,0 +1,60 @@
+{% extends 'ms.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="panel panel-default" style="background-color: #90a4ae;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+                                <div class="panel-body" style="background-color: #90a4ae">
+                                    <div class="thumbnail" style="background-color: #90a4ae;border-color: #90a4ae;" >
+                                        <img src="{% static 'images/bar-chart.png' %}" class="img-responsive" style="height: 200px;width: 200px; border-radius: 100%;">
+                                    </div>
+                                    <h5 style="color: white;font-size: 1.5em;font-style: normal">STATS:  </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3">
+                            <div class="panel panel-default" style="background-color: orange;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+                                <div class="panel-body" style="background-color: orange">
+                                    <div class="thumbnail" style="background-color: orange;border-color: orange;" >
+                                        <img src="{% static 'images/cutlery.png' %}" class="img-responsive" style="height: 200px;width: 200px; border-radius: 100%;">
+                                    </div>
+                                    <h5 style="color: white;font-size: 1.5em;font-style: normal">ORDERS: {{ orde }} </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3">
+                            <div class="panel panel-default" style="background-color: blueviolet;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+                                <div class="panel-body" style="background-color: blueviolet">
+                                    <div class="thumbnail" style="background-color: blueviolet;border-color: blueviolet;" >
+                                        <img src="{% static 'images/chicken-2.png' %}" class="img-responsive" style="height: 200px;width: 200px; border-radius: 100%;">
+                                    </div>
+                                    <h5 style="color: white;font-size: 1.5em;font-style: normal">PRODUCTS: {{ stats }} </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3">
+                            <div class="panel panel-default" style="background-color: darkolivegreen;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+                                <div class="panel-body" style="background-color: darkolivegreen">
+                                    <div class="thumbnail" style="background-color: darkolivegreen;border-color: darkolivegreen;" >
+                                        <img src="{% static 'images/mail-1.png' %}" class="img-responsive" style="height: 200px;width: 200px; border-radius: 100%;">
+                                    </div>
+                                    <h5 style="color: white;font-size: 1.5em;font-style: normal">FEEDBACKS: {{ coment }} </h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                {% endblock %}

@@ -1,0 +1,243 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" type="text/css" media="all"/>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <!-- //web-fonts -->
+</head>
+<body>
+<style>
+    #k {
+        color: white !important;
+        font-size: medium;
+        font-style: normal;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    }
+
+    #t {
+        font-size: 15px;
+        font-style: oblique;
+        font-family: Ebrima;
+        margin-right: 25px;
+    }
+
+    .navbar-brand {
+        font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive !important;
+        color: white !important;
+    }
+
+
+</style>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static" style="background-color: orange;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"
+                    style="background-color: orange">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{% url 'home' %}" class="navbar-brand">Oja</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="storenav">
+            <ul class="nav navbar-nav" style="margin-left: 20px ;">
+                <li><a href="/shop/provisions/" id="k"><span class="glyphicon glyphicon-compressed"></span>
+                    Provision</a>
+                </li>
+                <li><a href="/shop/raw_food/" id="k"><span class="glyphicon glyphicon-grain"></span> Raw Food</a></li>
+                <li><a href="/shop/cooked_food/" id="k"><span class="glyphicon glyphicon-cutlery"></span> Cooked
+                    Food</a></li>
+                <li><a href="/shop/snacks/" id="k"><span class="glyphicon glyphicon-menu-hamburger"></span> Snacks |
+                    Drinks</a></li>
+                <li><a href="/shop/soup_ingredient/" id="k"><span class="glyphicon glyphicon-leaf"></span> Soup
+                    Ingredient</a></li>
+
+            </ul>
+
+            {#            <ul class="nav navbar-nav navbar-right">#}
+            {#                <li><a href="{% url 'index' %}" id="k"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>#}
+            {#            </ul>#}
+
+        </div>
+    </div>
+</nav>
+<br><br>
+<div class="container" href="#checkout" data-toggle="modal">
+    <i class="glyphicon glyphicon-shopping-cart"
+       style="position: fixed;font-size: 40px; top: 15%; left: 85%; z-index: 498;"><span
+            class="badge badge-warning tiny" style="position: absolute;font-size: 15px;width: 10px !important;
+min-width: 20px;
+top: 0; right: 0">{{ request.session.cart|length }}</span></i>
+</div>
+
+{% block content %}{% endblock %}
+
+<!-- Header -->
+<footer class="footer fixed bottom">
+    <div class="container">
+        <ul>
+            <li><h5 style="margin-left: 100px;color: orange;">Developed by EMIZY</h5></li>
+        </ul>
+
+    </div>
+</footer>
+
+<div class="modal bnr-modal fade" id="checkout" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-spa">
+                <div class="modal-w3lstext">
+                    <h4>Ordered List</h4>
+                    {% if request.session.cart %}
+                        <div id="{{ i.id }}_csrf_holder">
+                            {% csrf_token %}
+                        </div>
+                        <script>
+                            var div = document.getElementById("{{ i.id }}_csrf_holder");
+                            var csrf = div.getElementsByTagName('input')[0].value;
+                        </script>
+                        <div class="table-responsive">
+                        <table class="=table table-striped table-bordered table-hover table-condensed"
+                               style="width: 100%;">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for key, value in request.session.cart.items %}
+                            <tr class="">
+                                <td id="t" style="font-size: 20px; font-style: normal !important;">{{ value.Name }}</td>
+                                <td id="t"
+                                    style="font-size: 20px; font-style: normal !important;">{{ value.Quantity }}</td>
+                                <td id="t" style="font-size: 20px; !important;">{{ value.Total }}</td>
+                                <td>
+                                    <a href="#" type="button" class="btn btn-danger"
+                                       onclick="remove_from_cart('{{ key }}', csrf);"
+                                       style="text-decoration: none; color: white;">Remove</a>
+                                    {#                                    <a href="#" onclick="if (window.confirm('Are you sure you want to remove {{ value.Quantity }} {{ value.Name }} from cart?'))#}
+                                    {#                                   {remove_from_cart('{{ key }}', csrf);}" style="text-decoration: none; color: red;">X</a>#}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td id="t" style="font-size: 20px; !important;"> final Total:</td>
+                            <td id="t" style="font-size: 20px; !important;">{{ request.session.total }}</td>
+                            <td>
+                                <a href="{% url 'checkout' %}" type="button" class="btn btn-warning pull-right"
+                                   style="margin-top: 10px;margin-left: 2px;">
+                                    <span class="glyphicon glyphicon-circle-arrow-right"> PROCEED</span>
+                                </a>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    {% else %}
+                        Cart is empty
+                    {% endif %}
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of check modal-->
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+            items: 3,
+            lazyLoad: true,
+            autoPlay: true,
+            pagination: false,
+        });
+    });
+</script>
+<!-- //Owl-Carousel-JavaScript -->
+<!-- menu-js -->
+<script>
+    $('.navicon').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('navicon--active');
+        $('.toggle').toggleClass('toggle--active');
+    });
+</script>
+<!-- //menu-js -->
+<!-- Progressive-Effects-Animation-JavaScript -->
+<script type="text/javascript" src="{% static 'js/numscroller-1.0.js' %}"></script>
+<!-- //Progressive-Effects-Animation-JavaScript -->
+<!-- jarallax -->
+<script src=" {% static 'js/SmoothScroll.min.js' %}"></script>
+<script src=" {% static 'js/jarallax.js' %}"></script>
+<script type="text/javascript">
+    /* init Jarallax */
+    $('.jarallax').jarallax({
+        speed: 0.5,
+        imgWidth: 1366,
+        imgHeight: 768
+    })
+</script>
+<!-- //jarallax -->
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src=" {% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>

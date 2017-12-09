@@ -1,0 +1,56 @@
+{% extends 'emoh.html' %}
+<!--login-->
+{% block content %}
+
+{#Edward#}
+{% if messages %}
+    {% for message in messages %}
+        <div id="alertBox" class="w3-{{ message.tags }}">
+            <button id="bannerClose" class="w3-right w3-text-black w3-large" onclick="closeModal('alertBox')"
+                    style="background-color: transparent; border: none;">&times;</button>
+            <div class="w3-center">
+                <label id="alert" class="w3-text-white w3-large">{{ message }}</label>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="login">
+    <div class="main-agileits">
+        <div class="form-w3agile">
+            <h3>Login</h3>
+            <form action="#" method="post">
+                {% csrf_token %}
+                {% if errormessage %}
+                            <script>
+                            alert(errormessage);
+                            </script>
+                        {% endif %}
+                <div class="key">
+                    <i class="fa fa-envelrope" aria-hidden="true"></i>
+                    <input type="text" value="Username" name="Username" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Username';}" required="" class="form-control">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="key">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" value="Password" name="Password" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Password';}" required="" class="form-control">
+                    <div class="clearfix"></div>
+                </div>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="forg">
+            <a href="#" class="forg-left">Forgot Password</a>
+            <a href="{% url 'Adminreg' %}" class="forg-right">Register</a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+

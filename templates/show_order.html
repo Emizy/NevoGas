@@ -1,0 +1,108 @@
+{% extends 'ms.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .con {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow-x: hidden !important;
+        }
+
+    </style>
+
+    <div class="w3-bar w3-orange w3-border w3-border-white w3-round">
+        <div class="w3-bar-item" style="text-align: center;color:white;">SHOW ORDER PRODUCTS </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table con">
+            <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Fullname</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th> Address</th>
+                <th>Grandtotal</th>
+                <th>Views</th>
+                <th>Confirm</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for o, d in orders %}
+                <tr>
+                    <td>{{ o.id }}</td>
+                    <td>{{ o.Name }}</td>
+                    <td>{{ o.Phone }}</td>
+                    <td>{{ o.Email }}</td>
+                    <td>{{ o.address }}</td>
+                    <td>{{ o.sumtotal }}</td>
+                    <td>
+                        <a type="button" class="w3-btn" href="#faqx_{{ o.id }}" data-toggle="modal"
+                           name="#modal_{{ o.id }}"
+                           style="background-color: orange;">
+                            View
+                        </a>
+                    </td>
+                    <td>
+                        {#                        <a href="#" id="{{ o.id }}" type="button" class="w3-btn" name=""  style="background-color: orange;">#}
+                        {#                            Confirm#}
+                        {#                        </a>#}
+                        <form method="post" action="#">
+                            <div class="form-check">
+
+                                <div id="{{ o.id }}_csrf_holder">
+                                    {% csrf_token %}
+                                </div>
+                                <script>
+                                    var div = document.getElementById("{{ o.id }}_csrf_holder");
+                                    var csrf = div.getElementsByTagName('input')[0].value;
+                                </script>
+                                <label class="form-check-label">
+                                    <input id="{{ o.id }}" type="checkbox" name="{{ o.id }}_confirm" class="form-check-input" onclick="confirm_order(csrf, this.id, this.checked)" checked="{{ o.confirm }}">
+                                </label>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <!-- modal-faqx -->
+                <div class="modal bnr-modal fade" id="faqx_{{ o.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-spa">
+                                {#                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>#}
+                                <div class="modal-w3lstext">
+                                    <div class="row">
+                                        <div class="colmd-12 col-sm-12">
+                                            <h2 style="color:red;"><span
+                                                    class="glyphicon glyphicon-modal-window"></span>
+                                                Ordering Details
+                                            </h2>
+                                            {% for detail in d %}
+                                                <h5> Product: {{ detail.item.product_name }}</h5>
+                                                <h5> qty : {{ detail.qty }}</h5>
+                                                <h5> total : {{ detail.total }}</h5>
+                                                <h5> Date Created : {{ detail.created_at }}</h5>
+                                                <hr>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //modal-faqx-->
+                <div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
