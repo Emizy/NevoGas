@@ -77,11 +77,18 @@ WSGI_APPLICATION = 'NevoGas.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'NevoGas',
+    #     'USER': 'NevoGold',
+    #     'PASSWORD': 'ayo2012',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'NevoGas',
-        'USER': 'NevoGold',
-        'PASSWORD': 'ayo2012',
+        'NAME': 'NevoGas$Gas',
+        'USER': 'NevoGas',
+        'PASSWORD': 'joseph2012',
+        'HOST': 'Madonna.mysql.pythonanywhere-services.com'
     }
 }
 
