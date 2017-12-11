@@ -277,7 +277,7 @@ def comment(request):
 def Adminreg(request):
     if request.method == 'GET':
         context = locals()
-        templates = "adminreg.html"
+        templates = "Adminreg.html"
         return render(request, templates, context)
     elif request.method == 'POST':
         admin = adminreg()
@@ -285,7 +285,7 @@ def Adminreg(request):
         admin.Password = request.POST.get('Password')
         admin.save()
         context = {'successmsg': "Registration successfull Continue to login", 'user': request.POST.get('Username'), }
-        templates = 'adminreg.html'
+        templates = 'Adminreg.html'
         return render(request, templates, context)
 
 

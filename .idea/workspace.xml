@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="57edf270-c2f2-4b74-be34-0ba4af7b6ec7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gas/views.py" afterPath="$PROJECT_DIR$/Gas/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout.html" afterPath="$PROJECT_DIR$/templates/checkout.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,14 +19,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gas/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="297">
+              <caret line="276" column="22" lean-forward="false" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#318#612#0" expanded="false" />
+                <element signature="e#641#1297#0" expanded="false" />
                 <element signature="e#1326#2079#0" expanded="false" />
                 <element signature="e#2107#2195#0" expanded="false" />
                 <element signature="e#2143#2195#0" expanded="false" />
@@ -32,6 +35,7 @@
                 <element signature="e#4361#4444#0" expanded="false" />
                 <element signature="e#4560#4642#0" expanded="false" />
                 <element signature="e#4750#4821#0" expanded="false" />
+                <element signature="e#4909#6388#0" expanded="false" />
                 <element signature="e#6419#6852#0" expanded="false" />
                 <element signature="e#6884#8101#0" expanded="false" />
                 <element signature="e#8134#8793#0" expanded="false" />
@@ -55,8 +59,8 @@
       <file leaf-file-name="checkout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/checkout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-799">
-              <caret line="237" column="62" lean-forward="false" selection-start-line="237" selection-start-column="62" selection-end-line="237" selection-end-column="62" />
+            <state relative-caret-position="414">
+              <caret line="236" column="41" lean-forward="false" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -75,57 +79,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gas_repair.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/gas_repair.html">
+      <file leaf-file-name="Adminlog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Adminlog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="526" column="26" lean-forward="true" selection-start-line="526" selection-start-column="26" selection-end-line="526" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="food.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/food.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="289" column="104" lean-forward="false" selection-start-line="289" selection-start-column="104" selection-end-line="289" selection-end-column="104" />
+            <state relative-caret-position="340">
+              <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NevoGas/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding>
-                <element signature="n#if#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="email_info.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NevoGas/email_info.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -150,9 +118,9 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/gas_repair.html" />
         <option value="$PROJECT_DIR$/NevoGas/email_info.py" />
-        <option value="$PROJECT_DIR$/Gas/views.py" />
-        <option value="$PROJECT_DIR$/templates/checkout.html" />
         <option value="$PROJECT_DIR$/NevoGas/settings.py" />
+        <option value="$PROJECT_DIR$/templates/checkout.html" />
+        <option value="$PROJECT_DIR$/Gas/views.py" />
       </list>
     </option>
   </component>
@@ -338,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512993456987</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Second">
+      <created>1512993555901</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1512993555902</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -465,6 +440,7 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#318#612#0" expanded="false" />
+            <element signature="e#641#1297#0" expanded="false" />
             <element signature="e#1326#2079#0" expanded="false" />
             <element signature="e#2107#2195#0" expanded="false" />
             <element signature="e#2143#2195#0" expanded="false" />
@@ -472,6 +448,7 @@
             <element signature="e#4361#4444#0" expanded="false" />
             <element signature="e#4560#4642#0" expanded="false" />
             <element signature="e#4750#4821#0" expanded="false" />
+            <element signature="e#4909#6388#0" expanded="false" />
             <element signature="e#6419#6852#0" expanded="false" />
             <element signature="e#6884#8101#0" expanded="false" />
             <element signature="e#8134#8793#0" expanded="false" />
@@ -580,6 +557,7 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#318#612#0" expanded="false" />
+            <element signature="e#641#1297#0" expanded="false" />
             <element signature="e#1326#2079#0" expanded="false" />
             <element signature="e#2107#2195#0" expanded="false" />
             <element signature="e#2143#2195#0" expanded="false" />
@@ -587,6 +565,7 @@
             <element signature="e#4361#4444#0" expanded="false" />
             <element signature="e#4560#4642#0" expanded="false" />
             <element signature="e#4750#4821#0" expanded="false" />
+            <element signature="e#4909#6388#0" expanded="false" />
             <element signature="e#6419#6852#0" expanded="false" />
             <element signature="e#6884#8101#0" expanded="false" />
             <element signature="e#8134#8793#0" expanded="false" />
@@ -687,6 +666,7 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#318#612#0" expanded="false" />
+            <element signature="e#641#1297#0" expanded="false" />
             <element signature="e#1326#2079#0" expanded="false" />
             <element signature="e#2107#2195#0" expanded="false" />
             <element signature="e#2143#2195#0" expanded="false" />
@@ -694,6 +674,7 @@
             <element signature="e#4361#4444#0" expanded="false" />
             <element signature="e#4560#4642#0" expanded="false" />
             <element signature="e#4750#4821#0" expanded="false" />
+            <element signature="e#4909#6388#0" expanded="false" />
             <element signature="e#6419#6852#0" expanded="false" />
             <element signature="e#6884#8101#0" expanded="false" />
             <element signature="e#8134#8793#0" expanded="false" />
@@ -836,14 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Adminlog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/add_product.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -864,14 +837,6 @@
             <element signature="e#3853#4117#0" expanded="false" />
             <element signature="e#4179#4283#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NevoGas/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,13 +894,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="236" column="41" lean-forward="false" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NevoGas/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Adminlog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gas/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state relative-caret-position="297">
+          <caret line="276" column="22" lean-forward="false" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#318#612#0" expanded="false" />
+            <element signature="e#641#1297#0" expanded="false" />
             <element signature="e#1326#2079#0" expanded="false" />
             <element signature="e#2107#2195#0" expanded="false" />
             <element signature="e#2143#2195#0" expanded="false" />
@@ -943,6 +944,7 @@
             <element signature="e#4361#4444#0" expanded="false" />
             <element signature="e#4560#4642#0" expanded="false" />
             <element signature="e#4750#4821#0" expanded="false" />
+            <element signature="e#4909#6388#0" expanded="false" />
             <element signature="e#6419#6852#0" expanded="false" />
             <element signature="e#6884#8101#0" expanded="false" />
             <element signature="e#8134#8793#0" expanded="false" />
@@ -959,25 +961,6 @@
             <element signature="e#13351#14389#0" expanded="false" />
             <element signature="e#14418#14934#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-799">
-          <caret line="237" column="62" lean-forward="false" selection-start-line="237" selection-start-column="62" selection-end-line="237" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
