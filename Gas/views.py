@@ -26,11 +26,11 @@ def contact(request):
         con.Email = request.POST.get('Email')
         con.message = request.POST.get('message')
         con.save()
-        subject = [con.subject, con.Email]
-        message = con.message
-        from_mail = settings.EMAIL_HOST_USER
-        to_list = [from_mail]
-        send_mail(subject=subject, message=message, from_email=con.Email, recipient_list=to_list, fail_silently=False)
+        # subject = [con.subject, con.Email]
+        # message = con.message
+        # from_mail = settings.EMAIL_HOST_USER
+        # to_list = [from_mail]
+        # send_mail(subject=subject, message=message, from_email=con.Email, recipient_list=to_list, fail_silently=False)
         return redirect(request.META.get('HTTP_REFERER'), context)
 
 
@@ -153,6 +153,7 @@ def checkout(request):
         del request.session['cart']
         del request.session['total']
         del request.session['grandtotal']
+        messages.success(request, 'Order Successfully Submitted,Kindly wait for our call.Thanks')
         return redirect('/')
 
 

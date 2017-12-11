@@ -1,14 +1,30 @@
 {% extends 'food.html' %}
 {% load staticfiles %}
 {% block content %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div id="alertBox" class="w3-{{ message.tags }}">
+                <button id="bannerClose" class="w3-right w3-text-white w3-large"
+                        onclick="closeModal('alertBox')"
+                        style="background-color: transparent; border: none;">&times;
+                </button>
+                <div class="w3-center">
+                    <label id="alert" class="w3-text-green w3-large" style="font-size: 5px;">{{ message }}</label>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <div class="w3-center">
         <div class="w3-bar">
             <a href="{% url 'gas_acc' %}" class="w3-button w3-hover-green w3-text-green w3-border w3-border-green"
                style="margin-right: 2px;">BUY
                 GAS ACCESORIES <i
                         class="fa fa-cart-arrow-down" aria-hidden="true"></i> </a>
-            <a href="{% url 'gas_repair' %}" class="w3-button w3-hover-green w3-text-green w3-border w3-border-green">Order for Gas-Repair <i
-                    class="fa fa-cart-arrow-down" aria-hidden="true"></i> </a>
+            <a href="{% url 'gas_repair' %}" class="w3-button w3-hover-green w3-text-green w3-border w3-border-green">Order
+                for Gas-Repair <i
+                        class="fa fa-cart-arrow-down" aria-hidden="true"></i> </a>
         </div>
     </div>
 
