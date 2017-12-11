@@ -9,7 +9,7 @@ class Contact(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.Username
+        return self.subject
 
 
 # class Product(models.Model):
@@ -67,19 +67,21 @@ class Gas(models.Model):
     def __str__(self):
         return "%s - %s" % (self.product_name, self.price)
 
+
 class GasRepair(models.Model):
-    fname = models.CharField(max_length=200,blank=True,null=True)
-    email = models.EmailField(null=True,blank=True,max_length=254)
+    fname = models.CharField(max_length=200, blank=True, null=True)
+    email = models.EmailField(null=True, blank=True, max_length=254)
     phone = models.CharField(max_length=11)
     location = models.CharField(max_length=100)
     address = models.TextField(blank=True)
-    cooker = models.CharField(max_length=200,blank=True,null=True)
+    cooker = models.CharField(max_length=200, blank=True, null=True)
     descrip = models.TextField(blank=True)
     image1 = models.FileField(null=True, blank=True)
     image2 = models.FileField(null=True, blank=True)
 
     def __str__(self):
         return "%s - %s" % (self.fname, self.phone)
+
 
 class Order(models.Model):
     Name = models.CharField(max_length=90)
@@ -99,7 +101,7 @@ class Order(models.Model):
 
 
 class OrderingDetails(models.Model):
-    item = models.ForeignKey(Gas, on_delete=models.DO_NOTHING,blank=True,null=True)
+    item = models.ForeignKey(Gas, on_delete=models.DO_NOTHING, blank=True, null=True)
     order = models.ForeignKey(Order, on_delete=models.DO_NOTHING)
     qty = models.IntegerField()
     total = models.IntegerField()
@@ -107,7 +109,7 @@ class OrderingDetails(models.Model):
 
     def __str__(self):
         return "%s - %s - %s - %s - %s" % (
-            self.order.cus.Name, self.order.cus.Phone, self.order.cus.Phone, self.item.product_name,
+            self.order.Name, self.order.Phone, self.order.Phone, self.item.product_name,
             self.order.sumtotal)
 
 
