@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57edf270-c2f2-4b74-be34-0ba4af7b6ec7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NevoGas/email_info.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gas/views.py" afterPath="$PROJECT_DIR$/Gas/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NevoGas/settings.py" afterPath="$PROJECT_DIR$/NevoGas/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NevoGas/urls.py" afterPath="$PROJECT_DIR$/NevoGas/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/script.js" afterPath="$PROJECT_DIR$/static/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout.html" afterPath="$PROJECT_DIR$/templates/checkout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/gas_repair.html" afterPath="$PROJECT_DIR$/templates/gas_repair.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/food.html" afterPath="$PROJECT_DIR$/templates/food.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,6 +63,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="food.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/food.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3247">
+              <caret line="290" column="32" lean-forward="false" selection-start-line="290" selection-start-column="32" selection-end-line="290" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gas_acc.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/gas_acc.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkout.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checkout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/checkout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="214" column="98" lean-forward="true" selection-start-line="214" selection-start-column="98" selection-end-line="214" selection-end-column="98" />
+            <state relative-caret-position="-52">
+              <caret line="214" column="94" lean-forward="false" selection-start-line="214" selection-start-column="94" selection-end-line="214" selection-end-column="94" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -97,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-26">
-              <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+              <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
-              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+              <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -137,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/Gas/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+              <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#304#334#0" expanded="false" />
@@ -161,7 +164,6 @@
         <option value="$PROJECT_DIR$/templates/ms.html" />
         <option value="$PROJECT_DIR$/templates/add_product.html" />
         <option value="$PROJECT_DIR$/templates/gas_acc.html" />
-        <option value="$PROJECT_DIR$/templates/food.html" />
         <option value="$PROJECT_DIR$/Gas/admin.py" />
         <option value="$PROJECT_DIR$/Gas/models.py" />
         <option value="$PROJECT_DIR$/templates/gas_repair.html" />
@@ -171,6 +173,7 @@
         <option value="$PROJECT_DIR$/static/js/script.js" />
         <option value="$PROJECT_DIR$/NevoGas/settings.py" />
         <option value="$PROJECT_DIR$/templates/checkout.html" />
+        <option value="$PROJECT_DIR$/templates/food.html" />
       </list>
     </option>
   </component>
@@ -240,6 +243,11 @@
               <item name="NevoGas" type="b2602c69:ProjectViewProjectNode" />
               <item name="NevoGas" type="462c0819:PsiDirectoryNode" />
               <item name="NevoGas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NevoGas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NevoGas" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512980597956</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Second">
+      <created>1512988472347</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1512988472347</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,6 +420,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="15" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -502,6 +518,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="15" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -608,6 +625,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="15" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -695,6 +713,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -805,13 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/food.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="289" column="39" lean-forward="false" selection-start-line="289" selection-start-column="39" selection-end-line="289" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -835,7 +847,7 @@
     <entry file="file://$PROJECT_DIR$/Gas/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#304#334#0" expanded="false" />
@@ -899,8 +911,27 @@
     <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="214" column="94" lean-forward="false" selection-start-line="214" selection-start-column="94" selection-end-line="214" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -912,22 +943,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/script.js">
+    <entry file="file://$PROJECT_DIR$/templates/food.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="3247">
+          <caret line="290" column="32" lean-forward="false" selection-start-line="290" selection-start-column="32" selection-end-line="290" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="214" column="98" lean-forward="true" selection-start-line="214" selection-start-column="98" selection-end-line="214" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
