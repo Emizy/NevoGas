@@ -391,11 +391,11 @@
 </style>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed w3-green"
-     style="background-color: orange; padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
+     style="background-color: green; padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"
-                    style="background-color: orange">
+            <button type="button" class="navbar-toggle w3-green" data-toggle="collapse" data-target="#storenav"
+                   >
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -420,31 +420,63 @@
 <div class="container">
     <div class="container" style="padding-top: 50px;padding-bottom: 20px;">
         <div class="row" style="border-radius: 25px;">
-            <div class="col-md-3 w3-round w3-orange">
-                <div class="w3-bar-block w3-orange">
-                    <div class="w3-bar-item w3-border w3-border-white"><a href="{% url 'show_order' %}"
-                                                                          style="background-color: orange;"><p
-                            style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span
-                            class="glyphicon glyphicon-check"></span> SHOW ORDER </p></a></div>
-
-                    <div class="w3-bar-item w3-border w3-border-white">
-                        <a href="{% url 'add_product' %}"><p
-                                style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span
-                                class="glyphicon glyphicon-check"></span>ADD PRODUCTS </p></a></div>
-
+            <div class="col-md-3 w3-round">
+{#                <div class="w3-bar-block w3-orange">#}
+{#                    <div class="w3-bar-item w3-border w3-border-white"><a href="{% url 'show_order' %}"#}
+{#                                                                          style="background-color: orange;"><p#}
+{#                            style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span#}
+{#                            class="glyphicon glyphicon-check"></span> SHOW ORDER </p></a></div>#}
+{##}
+{#                    <div class="w3-bar-item w3-border w3-border-white">#}
+{#                        <a href="{% url 'add_product' %}"><p#}
+{#                                style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span#}
+{#                                class="glyphicon glyphicon-check"></span>ADD PRODUCTS </p></a></div>#}
+{##}
 {#                    <div class="w3-bar-item w3-border w3-border-white"><a href="{% url 'change' %}"><p#}
 {#                            style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span#}
 {#                            class="glyphicon glyphicon-check"></span>EDIT | DELETE</p></a></div>#}
+{##}
+{#                    <div class="w3-bar-item w3-border w3-border-white"><a href="#"><p#}
+{#                            style="color: white;font-size: 1.5em !important;font-family: 'Bodoni MT'"><span#}
+{#                            class="glyphicon glyphicon-check"></span>INCOME ANALYSIS</p></a></div>#}
+{##}
+{#                    <div class="w3-bar-item w3-border w3-border-white"><a href="{% url 'comment' %}"><p#}
+{#                            style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span#}
+{#                            class="glyphicon glyphicon-comment"></span>COMMENTS</p></a></div>#}
+{##}
+{#                </div>#}
 
-                    <div class="w3-bar-item w3-border w3-border-white"><a href="#"><p
-                            style="color: white;font-size: 1.5em !important;font-family: 'Bodoni MT'"><span
-                            class="glyphicon glyphicon-check"></span>INCOME ANALYSIS</p></a></div>
-
-                    <div class="w3-bar-item w3-border w3-border-white"><a href="{% url 'comment' %}"><p
-                            style="color: white;font-size: 1.5em;font-family: 'Bodoni MT'"><span
-                            class="glyphicon glyphicon-comment"></span>COMMENTS</p></a></div>
-
+                  <div class="container">
+        <h3>Quick Links</h3>
+        <div class="w3-row">
+            <div class="w3-col m3" style="width:30%">
+                <div class="w3-dropdown-click w3-green">
+                    <button onclick="myFunction()" class="w3-button w3-hover-green w3-green w3-text-white w3-hover-text-white  w3-round-large w3-border w3-border-green"
+                            style="color:white;"> Actions <i class="fa fa-arrow-circle-down"
+                                                                                   style="color: white;"
+                                                                                   aria-hidden="true"></i></button>
+                    <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border" style="z-index: 244">
+                        <a href="{% url 'show_order' %}" class="w3-bar-item w3-button">Show Order</a>
+{#                        <a href="{% url 'add_product' %}" class="w3-bar-item w3-button">Add Products</a>#}
+{#                        <a href="{% url 'change' %}" class="w3-bar-item w3-button">Edit | Delete</a>#}
+                        <a href="{% url 'comment' %}" class="w3-bar-item w3-button">Comments</a>
+                        <a href="#" class="w3-bar-item w3-button">INCOME ANALYSIS</a>
+                    </div>
                 </div>
+
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("Demo");
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                        } else {
+                            x.className = x.className.replace(" w3-show", "");
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
             </div>
             <div class="col-md-9" style="padding-right: 0px !important;
 padding-left: 0px !important;">
