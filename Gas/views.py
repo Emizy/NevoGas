@@ -209,22 +209,13 @@ def add_product(request):
         template = 'add_product.html'
         return render(request, template)
     elif request.method == 'POST' and request.FILES['image']:
-        if request.POST.get('category') == "":
-            product = Gas()
-            product.price = request.POST.get('price')
-            product.product_name = request.POST.get('product_name')
-            product.section = request.POST.get('section')
-            product.supplier = request.POST.get('supplier')
-            product.image = request.FILES['image']
-            product.save()
-        elif request.POST.get('category') == request.POST.get('category'):
-            product = Gas()
-            product.price = request.POST.get('price')
-            product.product_name = request.POST.get('product_name')
-            product.category = request.POST.get('category')
-            product.supplier = request.POST.get('supplier')
-            product.image = request.FILES['image']
-            product.save()
+        product = Gas()
+        product.price = request.POST.get('price')
+        product.product_name = request.POST.get('product_name')
+        product.Accessories = request.POST.get('Accessories')
+        product.supplier = request.POST.get('supplier')
+        product.image = request.FILES['image']
+        product.save()
     template = 'add_product.html'
     context = {'msg': "New Product Added Successfully", }
     return render(request, template, context)
@@ -372,7 +363,7 @@ def gas_repair(request):
             gas.image1 = request.FILES['image1']
             gas.image2 = request.FILES['image2']
             gas.save()
-            messages.success(request,'Order Successfully Submitted,Kindly wait for our call.Thanks')
+            messages.success(request, 'Order Successfully Submitted,Kindly wait for our call.Thanks')
             return redirect('/gas_repair/')
         else:
             context = {'err': "Order Not Successfully Submitted."}

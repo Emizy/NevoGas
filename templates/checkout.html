@@ -226,12 +226,15 @@
             </div>
             <script>
                 var div = document.getElementById("{{ i.id }}_csrf_holder");
-                var csrf = div.getElementsByTagName('input')[0].value;             </script>
+                var csrf = div.getElementsByTagName('input')[0].value;
+                var del =  document.getElementById('del_charge').innerHTML;
+                var amount = document.getElementById('tot_charge').innerHTML;
+            </script>
             <div class="w3-center">
                 <div class="w3-bar">
                     <button type="button" style="margin-top: 1%;margin-left: 0%; background-color: orange !important;"
                     class="w3-button w3-hover-orange w3-text-white w3-border w3-border-orange"
-                    onclick="paystack('{{ request.session.grandtotal }}',csrf);"><i class="fa fa-credit-card"
+                    onclick="paystack(amount,del,csrf);"><i class="fa fa-credit-card"
                                                                                     aria-hidden="true"></i>
                 Pay
             </button>
