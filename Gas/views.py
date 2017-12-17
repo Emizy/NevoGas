@@ -1,9 +1,6 @@
 import json
 import traceback
-import requests
-from django.conf import settings
 from django.contrib import messages
-from django.core.mail import send_mail
 from django.http import HttpRequest, JsonResponse, HttpResponse
 from django.shortcuts import render, redirect, render_to_response
 from Gas.models import *
