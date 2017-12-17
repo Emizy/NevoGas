@@ -88,6 +88,7 @@ class Order(models.Model):
     Email = models.EmailField(null=True, blank=True, max_length=254)
     Phone = models.CharField(max_length=11)
     address = models.TextField(blank=True)
+    payment_mode = models.CharField(max_length=11,blank=True,null=True)
     loc = models.CharField(max_length=100)
     del_charge = models.IntegerField()
     date = models.DateTimeField(auto_now_add=True)
@@ -97,7 +98,7 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "%s - %s" % (self.Name, self.sumtotal)
+        return "%s - %s -  %s" % (self.Name, self.sumtotal, self.payment_mode)
 
 
 class OrderingDetails(models.Model):

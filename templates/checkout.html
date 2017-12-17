@@ -25,9 +25,8 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-
     <!-- //web-fonts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 {#<div class="container" href="#checkout" data-toggle="modal">#}
@@ -131,7 +130,19 @@
         </div>
     </div>
 </div>
-
+{% if messages %}
+    {% for message in messages %}
+        <div id="alertBox" class="w3-{{ message.tags }}">
+            <button id="bannerClose" class="w3-right w3-text-white w3-large"
+                    onclick="closeModal('alertBox')"
+                    style="background-color: transparent; border: none;">&times;
+            </button>
+            <div class="w3-center">
+                <label id="alert" class="w3-text-green w3-large" style="font-size: 5px;">{{ message }}</label>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
 <style>
     table, th, td {
         border: 1px solid black;
@@ -227,19 +238,24 @@
             <script>
                 var div = document.getElementById("{{ i.id }}_csrf_holder");
                 var csrf = div.getElementsByTagName('input')[0].value;
-                var del =  document.getElementById('del_charge').innerHTML;
+                var del = document.getElementById('del_charge').innerHTML;
                 var amount = document.getElementById('tot_charge').innerHTML;
+                var payment_mode1 = document.getElementById('paystack').value;
+                var pay_mode = document.getElementById('pay_on_delivery').value;
             </script>
             <div class="w3-center">
                 <div class="w3-bar">
                     <button type="button" style="margin-top: 1%;margin-left: 0%; background-color: orange !important;"
-                    class="w3-button w3-hover-orange w3-text-white w3-border w3-border-orange"
-                    onclick="paystack(amount,del,csrf);"><i class="fa fa-credit-card"
-                                                                                    aria-hidden="true"></i>
-                Pay
-            </button>
-                    <button type="submit" class="w3-button w3-hover-orange w3-text-orange w3-hover-text-white w3-border w3-border-orange">Pay on-delivery <i
-                    class="fa fa-credit-card" aria-hidden="true"></i> </button>
+                            id="paystack"
+                            class="w3-button w3-hover-orange w3-text-white w3-border w3-border-orange"
+                            onclick="paystack(amount,del,csrf);" value="pays">PAY BY CARD    <i class="fa fa-credit-card"
+                                                                                aria-hidden="true"></i>
+
+                    </button>
+                    <button type="submit" id="pay_on_delivery"
+                            class="w3-button w3-hover-orange w3-text-orange w3-hover-text-white w3-border w3-border-orange">
+                        Pay on-delivery <i
+                            class="fa fa-credit-card" value="pay_on_delivery" onclick="paymethod(csrf, pay_mode)" aria-hidden="true"></i></button>
                 </div>
             </div>
 
@@ -301,19 +317,7 @@
 <!-- //menu-js -->
 <!-- Progressive-Effects-Animation-JavaScript -->
 <script type="text/javascript" src="{% static 'js/numscroller-1.0.js' %}"></script>
-<!-- //Progressive-Effects-Animation-JavaScript -->
-<!-- jarallax -->
 <script src=" {% static 'js/SmoothScroll.min.js' %}"></script>
-{#<script src=" {% static 'js/jarallax.js' %}"></script>#}
-{#<script type="text/javascript">#}
-{#    /* init Jarallax */#}
-{#    $('.jarallax').jarallax({#}
-{#        speed: 0.5,#}
-{#        imgWidth: 1366,#}
-{#        imgHeight: 768#}
-{#    })#}
-{#</script>#}
-<!-- //jarallax -->
 <!-- start-smooth-scrolling -->
 <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
 <script type="text/javascript" src=" {% static 'js/easing.js' %}"></script>

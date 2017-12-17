@@ -1,5 +1,6 @@
 import json
 import traceback
+import requests
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -128,7 +129,6 @@ def checkout(request):
         locs = Location.objects.all()
         return render(request, template, {"locs": locs})
     elif request.method == "POST":
-        order = Order()
         order.Name = request.POST.get('Name')
         order.Email = request.POST.get('Email')
         order.Phone = request.POST.get('Phone')

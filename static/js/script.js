@@ -270,3 +270,24 @@ function confirm_order(csrf, id, value){
     }
     // location.reload(true);
 }
+
+function paymode(csrf, paymode){
+    var method = "POST";
+    var url = window.location.href;
+    var arr = url.split("/");
+    var result = arr[0] + "//" + arr[2];
+    url = result + "/checkout/";
+    var headers = '{' +
+        '"X-CSRFToken":"' + csrf + '",' +
+        '"Content-Type":"application/json"}';
+    var data =
+        '{' +
+        '"pay": "' + paymode + '",' +
+        '}';
+    var response = call_api(method, url, headers, data);
+    console.log(response);
+    if (response['response'] = !'Success') {
+        alert(response['details']);
+    }
+    // location.reload(true);
+}
