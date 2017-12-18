@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57edf270-c2f2-4b74-be34-0ba4af7b6ec7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/12kg-2_Da0eQt0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/3kg-1_1dpuzFI.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/6kg-1_STEjpZ8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/gaspo1s.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/gaspos.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gas/migrations/0002_order_payment_mode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/images/Thumbs.db" afterPath="$PROJECT_DIR$/static/images/Thumbs.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gas/views.py" afterPath="$PROJECT_DIR$/Gas/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NevoGas/settings.py" afterPath="$PROJECT_DIR$/NevoGas/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/food.html" afterPath="$PROJECT_DIR$/templates/food.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/gas_repair.html" afterPath="$PROJECT_DIR$/templates/gas_repair.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +30,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gas/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="85">
               <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -76,8 +84,8 @@
       <file leaf-file-name="gas_repair.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/gas_repair.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="589" column="7" lean-forward="true" selection-start-line="589" selection-start-column="7" selection-end-line="589" selection-end-column="7" />
+            <state relative-caret-position="8330">
+              <caret line="490" column="63" lean-forward="false" selection-start-line="490" selection-start-column="10" selection-end-line="490" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -124,9 +132,11 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="136" column="34" lean-forward="false" selection-start-line="136" selection-start-column="34" selection-end-line="136" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="985">
+              <caret line="88" column="28" lean-forward="true" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+              <folding>
+                <marker date="1513566242400" expanded="true" signature="2680:2883" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,8 +154,8 @@
       <file leaf-file-name="food.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/food.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3638">
-              <caret line="216" column="18" lean-forward="false" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="18" />
+            <state relative-caret-position="187">
+              <caret line="160" column="12" lean-forward="true" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -168,7 +178,6 @@
         <option value="$PROJECT_DIR$/templates/add_product.html" />
         <option value="$PROJECT_DIR$/Gas/admin.py" />
         <option value="$PROJECT_DIR$/NevoGas/urls.py" />
-        <option value="$PROJECT_DIR$/templates/food.html" />
         <option value="$PROJECT_DIR$/NevoGas/email_info.py" />
         <option value="$PROJECT_DIR$/templates/emoh.html" />
         <option value="$PROJECT_DIR$/templates/Adminreg.html" />
@@ -179,8 +188,9 @@
         <option value="$PROJECT_DIR$/templates/checkout.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/gas_acc.html" />
-        <option value="$PROJECT_DIR$/templates/gas_repair.html" />
         <option value="$PROJECT_DIR$/Gas/views.py" />
+        <option value="$PROJECT_DIR$/templates/gas_repair.html" />
+        <option value="$PROJECT_DIR$/templates/food.html" />
         <option value="$PROJECT_DIR$/NevoGas/settings.py" />
       </list>
     </option>
@@ -238,7 +248,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,7 +258,13 @@
             <path>
               <item name="NevoGas" type="b2602c69:ProjectViewProjectNode" />
               <item name="NevoGas" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NevoGas" type="b2602c69:ProjectViewProjectNode" />
               <item name="NevoGas" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NevoGas" type="b2602c69:ProjectViewProjectNode" />
@@ -260,6 +275,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -423,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513546229639</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Second">
+      <created>1513547463755</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1513547463755</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -437,8 +460,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30332828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31240544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -583,15 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2176">
           <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding>
-            <element signature="e#106#304#0" expanded="false" />
-            <element signature="e#304#334#0" expanded="false" />
-            <element signature="e#1303#1510#0" expanded="false" />
-            <element signature="e#1542#2097#0" expanded="false" />
-            <element signature="e#2135#2696#0" expanded="false" />
-            <element signature="e#3950#4214#0" expanded="false" />
-            <element signature="e#4276#4380#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -607,7 +621,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2312">
           <caret line="136" column="1" lean-forward="true" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1513566242400" expanded="true" signature="2680:2883" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -694,15 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2176">
           <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding>
-            <element signature="e#106#304#0" expanded="false" />
-            <element signature="e#304#334#0" expanded="false" />
-            <element signature="e#1303#1510#0" expanded="false" />
-            <element signature="e#1542#2097#0" expanded="false" />
-            <element signature="e#2135#2696#0" expanded="false" />
-            <element signature="e#3950#4214#0" expanded="false" />
-            <element signature="e#4276#4380#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,7 +757,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1513566242400" expanded="true" signature="2680:2883" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -772,15 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#106#304#0" expanded="false" />
-            <element signature="e#304#334#0" expanded="false" />
-            <element signature="e#1303#1510#0" expanded="false" />
-            <element signature="e#1542#2097#0" expanded="false" />
-            <element signature="e#2135#2696#0" expanded="false" />
-            <element signature="e#3950#4214#0" expanded="false" />
-            <element signature="e#4276#4380#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -910,15 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="90" column="71" lean-forward="false" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
-          <folding>
-            <element signature="e#106#304#0" expanded="false" />
-            <element signature="e#304#334#0" expanded="false" />
-            <element signature="e#1303#1510#0" expanded="false" />
-            <element signature="e#1542#2097#0" expanded="false" />
-            <element signature="e#2135#2696#0" expanded="false" />
-            <element signature="e#3950#4214#0" expanded="false" />
-            <element signature="e#4276#4380#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,22 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/food.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3638">
-          <caret line="216" column="18" lean-forward="false" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gas_acc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/checkout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4063">
@@ -986,17 +961,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gas_repair.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="589" column="7" lean-forward="true" selection-start-line="589" selection-start-column="7" selection-end-line="589" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gas/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="85">
           <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -1026,11 +993,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gas_acc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gas_repair.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8330">
+          <caret line="490" column="63" lean-forward="false" selection-start-line="490" selection-start-column="10" selection-end-line="490" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/food.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="160" column="12" lean-forward="true" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="136" column="34" lean-forward="false" selection-start-line="136" selection-start-column="34" selection-end-line="136" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="985">
+          <caret line="88" column="28" lean-forward="true" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+          <folding>
+            <marker date="1513566242400" expanded="true" signature="2680:2883" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
