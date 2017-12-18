@@ -112,12 +112,12 @@
      style="background-color: orange; padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"
-                    style="background-color: orange">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+{#            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"#}
+{#                    style="background-color: orange">#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#            </button>#}
             <a href="{% url 'index' %}" class="navbar-brand">NevoGas</a>
         </div>
     </div>
@@ -182,14 +182,14 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="fname">fullname</label>
-            <input type="text" id="fname" class="form-control" name="Name" placeholder="Your name..">
+            <input type="text" id="fname" class="form-control" name="Name" placeholder="Your name.." required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" id="email" class="form-control" name="Email" placeholder="Email">
+            <input type="text" id="email" class="form-control" name="Email" placeholder="Email" required>
         </div>
         <div class="form-group"><label for="phone">Phone number</label>
-            <input type="text" id="phone" class="form-control" name="Phone" placeholder="081XXXXXXX">
+            <input type="text" id="phone" class="form-control" name="Phone" placeholder="081XXXXXXX" required>
         </div>
 
         <script>
@@ -231,6 +231,7 @@
                 Sum Total: <span id="tot_charge">{{ request.session.grandtotal }}</span></p>
 
         </div>
+        <input type="hidden" id="pay_mode" name="pay_mode" value="offline">
         <div class="container" style="left: 20%;">
             <div id="{{ i.id }}_csrf_holder">
                 {% csrf_token %}
@@ -238,24 +239,21 @@
             <script>
                 var div = document.getElementById("{{ i.id }}_csrf_holder");
                 var csrf = div.getElementsByTagName('input')[0].value;
-                var del = document.getElementById('del_charge').innerHTML;
-                var amount = document.getElementById('tot_charge').innerHTML;
-                var payment_mode1 = document.getElementById('paystack').value;
-                var pay_mode = document.getElementById('pay_on_delivery').value;
-            </script>
+                </script>
             <div class="w3-center">
                 <div class="w3-bar">
-                    <button type="button" style="margin-top: 1%;margin-left: 0%; background-color: orange !important;"
+                    <button type="button" style="margin-top: 1%;margin-left: 0%;"
                             id="paystack"
-                            class="w3-button w3-hover-orange w3-text-white w3-border w3-border-orange"
-                            onclick="paystack(amount,del,csrf);" value="pays">PAY BY CARD    <i class="fa fa-credit-card"
+                            class="w3-button w3-hover-green w3-text-green w3-hover-text-white w3-border w3-border-green"
+                            onclick="paystack('{{ request.session.grandtotal }}',csrf)" id="on" value="online">PAY BY CARD    <i class="fa fa-credit-card"
                                                                                 aria-hidden="true"></i>
 
                     </button>
-                    <button type="submit" id="pay_on_delivery"
-                            class="w3-button w3-hover-orange w3-text-orange w3-hover-text-white w3-border w3-border-orange">
+                    <button type="submit"
+                            class="w3-button w3-hover-green w3-text-green w3-hover-text-white w3-border w3-border-green"
+                   value="offline" id="off">
                         Pay on-delivery <i
-                            class="fa fa-credit-card" value="pay_on_delivery" onclick="paymethod(csrf, pay_mode)" aria-hidden="true"></i></button>
+                            class="fa fa-credit-card"  aria-hidden="true"></i></button>
                 </div>
             </div>
 

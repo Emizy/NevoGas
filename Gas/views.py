@@ -7,6 +7,7 @@ from Gas.models import *
 
 
 def index(request):
+    assert isinstance(request, HttpRequest)
     if request.method == "GET":
         sql = Gas.objects.filter(Accessories='gas_refill')
         if 'cart' not in request.session.keys():
@@ -17,6 +18,7 @@ def index(request):
 
 
 def contact(request):
+    assert isinstance(request, HttpRequest)
     if request.method == "POST":
         con = Contact()
         context = {'sucessmessage': "Thanks for contacting us hope to get back to you soon", }
@@ -120,12 +122,15 @@ def cart(request, url_name):
 
 
 def checkout(request):
+    assert isinstance(request, HttpRequest)
     if request.method == "GET":
         request.session['grandtotal'] = int(request.session['total'])
         template = 'checkout.html'
         locs = Location.objects.all()
         return render(request, template, {"locs": locs})
     elif request.method == "POST":
+        order = Order()
+        order.payment_mode = request.POST.get('pay_mode')
         order.Name = request.POST.get('Name')
         order.Email = request.POST.get('Email')
         order.Phone = request.POST.get('Phone')
@@ -155,6 +160,7 @@ def checkout(request):
 
 
 def adminpage(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         if 'username' in request.session.keys():
             prod = Gas.objects.all().count()
@@ -168,6 +174,7 @@ def adminpage(request):
 
 
 def show_order(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         holder = []
         for order in Order.objects.all():
@@ -202,6 +209,7 @@ def show_order(request):
 
 
 def add_product(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         context = locals()
         template = 'add_product.html'
@@ -220,6 +228,7 @@ def add_product(request):
 
 
 def change(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         edit = Gas.objects.all()
         context = {'edits': edit}
@@ -228,6 +237,7 @@ def change(request):
 
 
 def edit(request, edit_id):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         print('am here')
         show = Gas.objects.filter(id=edit_id)
@@ -287,6 +297,7 @@ def Adminreg(request):
 
 
 def Adminlog(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         context = locals()
         templates = 'Adminlog.html'
@@ -314,6 +325,7 @@ def Adminlog(request):
 
 
 def Adminlogout(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         del request.session['userid']
         del request.session['username']
@@ -321,6 +333,7 @@ def Adminlogout(request):
 
 
 def search(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'POST':
         # fil = ProductFilter(request.GET, queryset=Product.objects.all())
         # if fil:
@@ -344,6 +357,7 @@ def search(request):
 
 
 def gas_repair(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         context = locals()
         templates = 'gas_repair.html'
@@ -369,6 +383,7 @@ def gas_repair(request):
 
 
 def gas_acc(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         if 'cart' not in request.session.keys():
             request.session['cart'] = {}

@@ -153,8 +153,9 @@ function remove_from_gcart(id, csrf) {
     location.reload(true);
 }
 
-function paystack(amount, del, csrf) {
+function paystack(amount, csrf) {
     var date = new Date();
+    var del = document.getElementById('del_charge').innerHTML;
     var ref = "f4all-" + date.getFullYear() + "" + (date.getMonth() + 1) + "" + date.getDate() + "-" + date.getHours() + "" + date.getMinutes() + "" + date.getSeconds();
     var email = document.getElementById('email').value;
     // var amount = document.getElementById(id + '_pay_amount').value;
@@ -240,6 +241,7 @@ function paystack(amount, del, csrf) {
             //     '{' +
             //     '}';
             // call_api(method, url, headers, data);
+            document.getElementById("pay_mode").value = "online";
             document.getElementById("checkout_form").submit();
         },
         onClose: function () {
@@ -249,7 +251,7 @@ function paystack(amount, del, csrf) {
     handler.openIframe();
 }
 
-function confirm_order(csrf, id, value){
+function confirm_order(csrf, id, value) {
     var method = "POST";
     var url = window.location.href;
     var arr = url.split("/");
@@ -271,7 +273,7 @@ function confirm_order(csrf, id, value){
     // location.reload(true);
 }
 
-function paymode(csrf, paymode){
+function paymode(csrf, pay_mode) {
     var method = "POST";
     var url = window.location.href;
     var arr = url.split("/");
@@ -282,7 +284,7 @@ function paymode(csrf, paymode){
         '"Content-Type":"application/json"}';
     var data =
         '{' +
-        '"pay": "' + paymode + '",' +
+        '"pay": "' + pay_mode + '",' +
         '}';
     var response = call_api(method, url, headers, data);
     console.log(response);
