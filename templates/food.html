@@ -7,6 +7,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="nevogas , gas,gas delivery , gas service, gas repair,gas refill,home delivery,"/>
     <link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!--favico-->
+    <link rel="icon" type="image/png" sizes="64x64" href="{% static 'images/faviconit/favicon-64.png' %}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/faviconit/favicon-32.png' %}">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/faviconit/favicon-16.png' %}">
+
+    <link rel="apple-touch-icon" href="{% static 'images/faviconit/favicon-57.png' %}">
+
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/faviconit/favicon-114.png' %}">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/faviconit/favicon-72.png' %}">
+
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/faviconit/favicon-144.png' %}">
+
+    <link rel="apple-touch-icon" sizes="60x60" href="/{% static 'images/faviconit/favicon-60.png' %}">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/{% static 'images/faviconit/favicon-120.png' %}">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/{% static 'images/faviconit/favicon-76.png' %}">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/{% static 'images/faviconit/favicon-152.png' %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/faviconit/favicon-180.png' %}">
+
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+
+    <meta name="msapplication-TileImage" content="/favicon-144.png">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
     <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> <!-- font-awesome icons -->
     <script src="{% static 'js/script.js' %}"></script>
@@ -114,7 +144,13 @@ top: 0; right: 0">{{ request.session.cart|length }}</span></i>
 
 </style>
 
-
+<style>
+    #img {
+        width:100px;
+        height:60px;
+        pading-bottom: 10px;
+    }
+</style>
 <nav class="navbar navbar-default navbar-fixed w3-green"
      style="padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
     <div class="container-fluid">
@@ -125,7 +161,7 @@ top: 0; right: 0">{{ request.session.cart|length }}</span></i>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;">NevoGas</a>
+            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;"><img src="{% static 'images/LOGO.png' %}" style="max-width:100px; margin-top: -7px;"/></a>
         </div>
 
         <div class="collapse navbar-collapse" id="storenav">
@@ -389,9 +425,9 @@ top: 0; right: 0">{{ request.session.cart|length }}</span></i>
                 </button>
             </div>
             <div class="modal-body modal-spa">
-                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>
+                <img src="{% static 'images/favico.png' %}" class="img-responsive" alt="" style="width: 200px;height: 200px;display: block;margin: 0 auto;"/>
                 <div class="modal-w3lstext">
-                    <h4>Blanditiis deleniti</h4>
+                    <h4>NevoGas</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis
                         felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam
                         mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie

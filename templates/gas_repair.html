@@ -2,10 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}{% endblock %}
+    {% block head %}<title>Gas-Repair</title>{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
+    <!--favico-->
+    <link rel="icon" type="image/png" sizes="64x64" href="{% static 'images/faviconit/favicon-64.png' %}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/faviconit/favicon-32.png' %}">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/faviconit/favicon-16.png' %}">
+
+    <link rel="apple-touch-icon" href="{% static 'images/faviconit/favicon-57.png' %}">
+
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/faviconit/favicon-114.png' %}">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/faviconit/favicon-72.png' %}">
+
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/faviconit/favicon-144.png' %}">
+
+    <link rel="apple-touch-icon" sizes="60x60" href="/{% static 'images/faviconit/favicon-60.png' %}">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/{% static 'images/faviconit/favicon-120.png' %}">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/{% static 'images/faviconit/favicon-76.png' %}">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/{% static 'images/faviconit/favicon-152.png' %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/faviconit/favicon-180.png' %}">
+
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+
+    <meta name="msapplication-TileImage" content="/favicon-144.png">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
     <link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
     <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
     <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> <!-- font-awesome icons -->
@@ -454,7 +485,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;">NevoGas</a>
+            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;"><img
+                    src="{% static 'images/LOGO.png' %}" style="max-width:100px; margin-top: -7px;"/></a>
         </div>
 
         <div class="collapse navbar-collapse" id="storenav">
@@ -488,7 +520,7 @@
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
-{#        <li data-target="#myCarousel" data-slide-to="2"></li>#}
+        {#        <li data-target="#myCarousel" data-slide-to="2"></li>#}
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -518,7 +550,8 @@
                                 style="background-color: transparent; border: none;">&times;
                         </button>
                         <div class="w3-center w3-green">
-                            <label id="alert" class="w3-text-white w3-large" style="font-size: 5px;">{{ message }}</label>
+                            <label id="alert" class="w3-text-white w3-large"
+                                   style="font-size: 5px;">{{ message }}</label>
                         </div>
                     </div>
                 {% endfor %}
@@ -572,15 +605,17 @@
                            placeholder="Enter the name of Gas equipment" required>
                     <div class="clearfix"></div>
                 </div>
-  <script type="text/javascript">
-      function countChars(descrip , char_count ) {
-          var count = document.getElementById(descrip).value.length;
-              document.getElementById(char_count).innerHTML =count;
-      }
-  </script>
+                <script type="text/javascript">
+                    function countChars(descrip, char_count) {
+                        var count = document.getElementById(descrip).value.length;
+                        document.getElementById(char_count).innerHTML = count;
+                    }
+                </script>
                 <div class="form-group">
                     <textarea class="form-control" rows="5" id="descrip" name="descrip"
-                              placeholder="Description of what got spoilt" onfocus="countChars('descrip','char_count')" onKeyDown="countChars('descrip','char_count')" onKeyUp ="countChars('descrip','char_count')"  required></textarea>
+                              placeholder="Description of what got spoilt" onfocus="countChars('descrip','char_count')"
+                              onKeyDown="countChars('descrip','char_count')"
+                              onKeyUp="countChars('descrip','char_count')" required></textarea>
                     <p>Letter counts : <span id="char_count"></span></p>
                     <div class="clearfix"></div>
                 </div>
@@ -745,7 +780,7 @@
                 </button>
             </div>
             <div class="modal-body modal-spa">
-                <img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=""/>
+                <img src="{% static 'images/favico.png' %}" class="img-responsive" alt=""/>
                 <div class="modal-w3lstext">
                     <h4>Blanditiis deleniti</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis

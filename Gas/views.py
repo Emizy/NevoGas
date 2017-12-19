@@ -1,9 +1,11 @@
 import json
 import traceback
+import re
 from django.contrib import messages
 from django.http import HttpRequest, JsonResponse, HttpResponse
 from django.shortcuts import render, redirect, render_to_response
 from Gas.models import *
+
 
 
 def index(request):
@@ -365,18 +367,40 @@ def gas_repair(request):
     elif request.method == 'POST':
         if request.FILES['image1'] or request.FILES['image2']:
             gas = GasRepair()
-            gas.fname = request.POST.get('fname')
-            gas.email = request.POST.get('email')
-            gas.phone = request.POST.get('phone')
-            gas.location = request.POST.get('location')
-            gas.address = request.POST.get('address')
-            gas.cooker = request.POST.get('cooker')
-            gas.descrip = request.POST.get('descrip')
-            gas.image1 = request.FILES['image1']
-            gas.image2 = request.FILES['image2']
-            gas.save()
-            messages.success(request, 'Order Successfully Submitted,Kindly wait for our call.Thanks')
-            return redirect('/gas_repair/')
+            fname1 = request.POST.get('fname')
+            user_email = request.POST.get('email')
+            user_phone = request.POST.get('phone')
+            user_loc = request.POST.get('location')
+            user_addr = request.POST.get('address')
+            user_cooker = request.POST.get('cooker')
+            user_desp = request.POST.get('descrip')
+            user_image1 = request.FILES['image1']
+            user_image2 = request.FILES['image2']
+
+            if fname1 != None:
+                match = re.match("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", user_email)
+                if match != None:
+                        gas.email = user_email
+                        gas.fname = fname1
+                        gas.phone = user_phone
+                        gas.location = user_loc
+                        gas.location = user_addr
+                        gas.cooker = user_cooker
+                        gas.descrip = user_desp
+                        gas.image1 = user_image1
+                        gas.image2 = user_image2
+                        gas.save()
+                        messages.success(request, 'Order Successfully Submitted,Kindly wait for our call.Thanks')
+                        return redirect('/gas_repair/')
+                else:
+                    messages.error(request, 'Invalid Email')
+                    return redirect('/gas_repair/')
+            else:
+                messages.error(request, 'Name can not be empty')
+                return redirect('/gas_repair/')
+
+
         else:
             context = {'err': "Order Not Successfully Submitted."}
             return redirect('/gas_repair/', context)
