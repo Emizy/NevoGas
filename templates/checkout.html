@@ -275,7 +275,7 @@
                     <button type="button" style="margin-top: 1%;margin-left: 0%;"
                             id="paystack"
                             class="w3-button w3-hover-green w3-text-green w3-hover-text-white w3-border w3-border-green"
-                            onclick="paystack('{{ request.session.grandtotal }}',csrf)" id="on" value="online">PAY BY CARD    <i class="fa fa-credit-card"
+                            onclick="pay_stack('{{ request.session.grandtotal }}', csrf);" id="on" value="online">PAY BY CARD    <i class="fa fa-credit-card"
                                                                                 aria-hidden="true"></i>
 
                     </button>

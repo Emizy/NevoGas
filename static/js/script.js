@@ -153,7 +153,7 @@ function remove_from_gcart(id, csrf) {
     location.reload(true);
 }
 
-function paystack(amount, csrf) {
+function pay_stack(amount, csrf) {
     var date = new Date();
     var del = document.getElementById('del_charge').innerHTML;
     var ref = "f4all-" + date.getFullYear() + "" + (date.getMonth() + 1) + "" + date.getDate() + "-" + date.getHours() + "" + date.getMinutes() + "" + date.getSeconds();
