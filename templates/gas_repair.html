@@ -648,38 +648,36 @@
 <div class="footer" style="overflow-x: hidden;">
     <div class="container">
         <div class="col-md-4 footer-grid">
-            <h3> Hotlines </h3>
             <ul>
-                <li><a href="#">Eunice : 08100828813 </a></li>
-                <li><a href="#">Rajah : 07060569963 </a></li>
-                <li><a href="#">Emizy : 08139572244 </a></li>
+                <li><a href="#" class="w3-hover-text-green"><img src="{% static 'images/LOGO.png' %}" style="width: 150px;"/> </a></li>
+                <li>Contact Us : <i class="fa fa-whatsapp" aria-hidden="true" style="color: whitesmoke;"></i> 07060569963</li>
+                <li>Call : <i class="fa fa-mobile" style="color: whitesmoke"></i> 08139572244 </li>
 
             </ul>
+{#            <ul>#}
+{#                <li><a href=""> Meet Developers </a></li>#}
+{#            </ul>#}
+        </div>
+        <div class="col-md-4 footer-grid w3-hover-text-green">
+            <h4 style="font-size: medium;" class="w3-text-white">Payment Methods</h4>
             <ul>
-                <li><a href="http://aauaforum.com/dev.php"> Meet Developers </a></li>
+                <p style="font-size: 12px; ">We currently accept CASH ON DELIVERY, MASTERCARD, VERVE and PAYPAL. </p>
+                <li><i class="fa fa-cc-mastercard" aria-hidden="true" style="font-size: 20px; color: whitesmoke;padding-left: 3px;"></i><i class="fa fa-cc-visa" style="font-size: 20px;color: whitesmoke;" aria-hidden="true"></i> </li>
             </ul>
         </div>
-        <div class="col-md-4 footer-grid ">
-            <h3>Other portal</h3>
+        <div class="col-md-4 footer-grid w3-hover-text-green">
+            <h4 style="font-size: medium;" class="w3-text-white">Social Media</h4>
             <ul>
-                <li><a href="#">AAUAFORUM</a></li>
-                <li><a href="#">ALUTA-PORTAL</a></li>
-                <li><a href="#">ARTICLES-PORTAL</a></li>
-            </ul>
-        </div>
-        <div class="col-md-4 footer-grid">
-            <h3>Social Media</h3>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-facebook-official" aria-hidden="true"></i>Facebook</a></li>
+                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-twitter-square" aria-hidden="true"></i>Twitter</a></li>
+                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></li>
 
             </ul>
         </div>
         <div class="footer-bottom">
             <div class="copy-right">
                 <p> &copy; 2017 NevoGas. All Rights Reserved | Design by <a href=#" class="w3-text-green">
-                    XpresSoft_Ng</a></p>
+                    XpresSoft_Ng | </a> <a href="http://aauaforum.com/dev.php" class="w3-hover-text-green">Developers</a> </p>
             </div>
         </div>
     </div>
@@ -732,7 +730,7 @@
             <div class="modal-body modal-spa">
                 <!--<img src="images/g2.jpg" class="img-responsive" alt=""/>-->
                 <div class="modal-w3lstext">
-                    <h4>Contact - Us</h4>
+                    <h4 class="w3-text-green">Contact - Us</h4>
                     <form action="{% url 'contact' %}" method="post">
                         {% csrf_token %}
                         <div class="form-group">
@@ -753,7 +751,7 @@
                             <textarea type="text" class="form-control" name="message"
                                       placeholder="Write your message "></textarea>
                         </div>
-                        <input type="submit" name="submit" class="btn btn-warning w3-btn" value="Submit"
+                        <input type="submit" name="submit" class="btn w3-green w3-btn" value="Submit"
                                style="background-color: orange;margin-left: 70%;">
                     </form>
                 </div>

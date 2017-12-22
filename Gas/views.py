@@ -421,3 +421,21 @@ def gas_acc(request):
             context = {'msg': "No stock available", }
             template = 'index.html'
             return render(request, template, context)
+
+
+def test(request):
+    if request.method == 'GET':
+        context = locals()
+        templates = 'test.html'
+        return render(request,templates,context)
+    elif request.method == 'POST':
+        form = json.loads(request.body.decode(encoding='UTF-8'))
+        name = form['name']
+        phone = form['phone']
+        email = form['email']
+        print(name)
+        print(email)
+        print(phone)
+        context=locals()
+        templates = 'test.html'
+        return redirect(request.META.get('HTTP_REFERRER'))

@@ -273,23 +273,54 @@ function confirm_order(csrf, id, value) {
     // location.reload(true);
 }
 
-function paymode(csrf, pay_mode) {
-    var method = "POST";
-    var url = window.location.href;
-    var arr = url.split("/");
-    var result = arr[0] + "//" + arr[2];
-    url = result + "/checkout/";
-    var headers = '{' +
-        '"X-CSRFToken":"' + csrf + '",' +
-        '"Content-Type":"application/json"}';
-    var data =
-        '{' +
-        '"pay": "' + pay_mode + '",' +
-        '}';
-    var response = call_api(method, url, headers, data);
-    console.log(response);
-    if (response['response'] = !'Success') {
-        alert(response['details']);
-    }
-    // location.reload(true);
-}
+// function validate(csrf) {
+//     var name = document.getElementById('fname').value;
+//     var email = document.getElementById('email').value;
+//     var phone = document.getElementById('phone').value;
+//     // if (name.checkValidity() === false) {
+//     //     alert('Please enter full name');
+//     //     name.focus();
+//     //     return;
+//     // } else {
+//     //     var name = inpObj.value
+//     // }
+//     //
+//     // if (email.checkValidity() === false) {
+//     //     alert('Please enter full name');
+//     //     email.focus();
+//     //     return;
+//     // } else {
+//     //     var email = inpObj.value
+//     // }
+//     //
+//     // if (email.checkValidity() === false) {
+//     //     alert('Please enter full name');
+//     //     email.focus();
+//     //     return;
+//     // } else {
+//     //     var email = inpObj.value
+//     // }
+//
+//     var method = "POST";
+//     var url = window.location.href;
+//     var arr = url.split("/");
+//     var result = arr[0] + "//" + arr[2];
+//     url = result + "/test/";
+//     var headers = '{' +
+//         '"X-CSRFToken":"' + csrf + '",' +
+//         '"Content-Type":"application/json"}';
+//     var data =
+//         '{' +
+//         '"name": "' + name + '",' +
+//         '"email": "' + email + '",' +
+//         '"phone": "' + phone + '"' +
+//         '}';
+//     console.log(url, headers, data);
+//     var response = call_api(method, url, headers, data);
+//     console.log(response);
+//     if (response['response'] = !'Success') {
+//         alert(response['details']);
+//     }
+//     // location.reload(true);
+// }
+

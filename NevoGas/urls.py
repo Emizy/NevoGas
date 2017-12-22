@@ -25,5 +25,6 @@ urlpatterns = [
                   url(r'^Adminreg/', views.Adminreg, name="Adminreg"),
                   url(r'^Adminlog/', views.Adminlog, name="Adminlog"),
                   url(r'^Adminlogout/', views.Adminlogout, name="Adminlogout"),
+                  # url(r'^test/', views.test, name="test"),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
