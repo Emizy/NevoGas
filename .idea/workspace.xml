@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57edf270-c2f2-4b74-be34-0ba4af7b6ec7" name="Default" comment="Second">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/repair_details.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/repair_order.html" />
+    <list default="true" id="57edf270-c2f2-4b74-be34-0ba4af7b6ec7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gas/views.py" afterPath="$PROJECT_DIR$/Gas/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NevoGas/settings.py" afterPath="$PROJECT_DIR$/NevoGas/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NevoGas/urls.py" afterPath="$PROJECT_DIR$/NevoGas/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery-2.2.3.min.js" afterPath="$PROJECT_DIR$/static/js/jquery-2.2.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Adminlog.html" afterPath="$PROJECT_DIR$/templates/Adminlog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout.html" afterPath="$PROJECT_DIR$/templates/checkout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/emoh.html" afterPath="$PROJECT_DIR$/templates/emoh.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/gas_acc.html" afterPath="$PROJECT_DIR$/templates/gas_acc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ms.html" afterPath="$PROJECT_DIR$/templates/ms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/show_order.html" afterPath="$PROJECT_DIR$/templates/show_order.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -375,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513944291729</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Second">
+      <created>1515267993189</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1515267993189</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
