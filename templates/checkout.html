@@ -142,13 +142,14 @@
      style="background-color: orange; padding-bottom: 0px;margin-bottom: 0px !important;border-radius: 0px !important;border-color: transparent">
     <div class="container-fluid">
         <div class="navbar-header">
-{#            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"#}
-{#                    style="background-color: orange">#}
-{#                <span class="icon-bar"></span>#}
-{#                <span class="icon-bar"></span>#}
-{#                <span class="icon-bar"></span>#}
-{#            </button>#}
-            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;"><img src="{% static 'images/LOGO.png' %}" style="max-width:100px; margin-top: -7px;"/></a>
+            {#            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#storenav"#}
+            {#                    style="background-color: orange">#}
+            {#                <span class="icon-bar"></span>#}
+            {#                <span class="icon-bar"></span>#}
+            {#                <span class="icon-bar"></span>#}
+            {#            </button>#}
+            <a href="{% url 'index' %}" class="navbar-brand" style="font-size: 2em;"><img
+                    src="{% static 'images/LOGO.png' %}" style="max-width:100px; margin-top: -7px;"/></a>
         </div>
     </div>
 </nav>
@@ -239,14 +240,44 @@
             }
         </script>
         <div class="form-group"><label for="phone">Location</label>
-            <select name="loc" required onchange="addCharge(this.value, '{{ request.session.grandtotal }}');">
+            <select name="loc"  required onchange="addCharge(this.value, '{{ request.session.grandtotal }}');">
                 <option value="">- Select Location -</option>
                 {% for i in locs %}
                     <option value="{{ i.id }}:{{ i.charge }}">{{ i.name }}</option>
                 {% endfor %}
             </select>
         </div>
-
+{#<script>#}
+{#    $(function () {#}
+{#        $('#streetseleector').change(function () {#}
+{#            $('.colr').hide();#}
+{#            $('#' + $(this).val()).show();#}
+{#        })#}
+{#    })#}
+{#</script>#}
+{#        <div class="form-group" ><label for="phone">Location</label>#}
+{#            <select name="loc" id="streetseleector" required>#}
+{#                <option value="">- Select Location -</option>#}
+{#                <option value="red">Red</option>#}
+{#                <option value="blue">blue</option>#}
+{#            </select>#}
+{#        </div>#}
+{##}
+{#        <div class="form-group" id="red" class="colr" style="display:none"><label for="phone">Street</label>#}
+{#            <select name="loc"  required>#}
+{#                <option value="">- Select Street -</option>#}
+{#                <option value="red">Red</option>#}
+{#                <option value="blue">blue</option>#}
+{#            </select>#}
+{#        </div>#}
+{##}
+{#        <div class="form-group"  id="blue" class="colr" style="display:none"><label for="phone">Street</label>#}
+{#            <select name="loc" required>#}
+{#                <option value="">- Select Street -</option>#}
+{#                <option value="red">adinlewa</option>#}
+{#                <option value="blue">blue</option>#}
+{#            </select>#}
+{#        </div>#}
         <div class="form-group">
             <label for="comment">Adress:</label>
             <textarea class="form-control" rows="4" id="comment" name="address"
@@ -269,21 +300,22 @@
             <script>
                 var div = document.getElementById("{{ i.id }}_csrf_holder");
                 var csrf = div.getElementsByTagName('input')[0].value;
-                </script>
+            </script>
             <div class="w3-center">
                 <div class="w3-bar">
                     <button type="button" style="margin-top: 1%;margin-left: 0%;"
                             id="paystack"
                             class="w3-button w3-hover-green w3-text-green w3-hover-text-white w3-border w3-border-green"
-                            onclick="pay_stack('{{ request.session.grandtotal }}', csrf);" id="on" value="online">PAY BY CARD    <i class="fa fa-credit-card"
-                                                                                aria-hidden="true"></i>
+                            onclick="pay_stack('{{ request.session.grandtotal }}', csrf);" id="on" value="online">PAY
+                        WITH CARD <i class="fa fa-credit-card"
+                                     aria-hidden="true"></i>
 
                     </button>
                     <button type="submit"
                             class="w3-button w3-hover-green w3-text-green w3-hover-text-white w3-border w3-border-green"
-                   value="offline" id="off">
+                            value="offline" id="off">
                         PAY ON-DELIVERY <i
-                            class="fa fa-taxi"  aria-hidden="true"></i></button>
+                            class="fa fa-taxi" aria-hidden="true"></i></button>
                 </div>
             </div>
 
@@ -292,41 +324,50 @@
 </div>
 
 
-
 <!--footer-->
 <div class="footer" style="overflow-x: hidden;">
     <div class="container">
         <div class="col-md-4 footer-grid">
             <ul>
-                <li><a href="#" class="w3-hover-text-green"><img src="{% static 'images/LOGO.png' %}" style="width: 150px;"/> </a></li>
-                <li>Contact Us : <i class="fa fa-whatsapp" aria-hidden="true" style="color: whitesmoke;"></i> 07060569963</li>
-                <li>Call : <i class="fa fa-mobile" style="color: whitesmoke"></i> 08139572244 </li>
+                <li><a href="#" class="w3-hover-text-green"><img src="{% static 'images/LOGO.png' %}"
+                                                                 style="width: 150px;"/> </a></li>
+                <li>Contact Us : <i class="fa fa-whatsapp" aria-hidden="true" style="color: whitesmoke;"></i>
+                    07060569963
+                </li>
+                <li>Call : <i class="fa fa-mobile" style="color: whitesmoke"></i> 08139572244</li>
 
             </ul>
-{#            <ul>#}
-{#                <li><a href=""> Meet Developers </a></li>#}
-{#            </ul>#}
+            {#            <ul>#}
+            {#                <li><a href=""> Meet Developers </a></li>#}
+            {#            </ul>#}
         </div>
         <div class="col-md-4 footer-grid w3-hover-text-green">
             <h4 style="font-size: medium;" class="w3-text-white">Payment Methods</h4>
             <ul>
                 <p style="font-size: 12px; ">We currently accept CASH ON DELIVERY, MASTERCARD, VERVE and PAYPAL. </p>
-                <li><i class="fa fa-cc-mastercard" aria-hidden="true" style="font-size: 20px; color: whitesmoke;padding-left: 3px;"></i><i class="fa fa-cc-visa" style="font-size: 20px;color: whitesmoke;" aria-hidden="true"></i> </li>
+                <li><i class="fa fa-cc-mastercard" aria-hidden="true"
+                       style="font-size: 20px; color: whitesmoke;padding-left: 3px;"></i><i class="fa fa-cc-visa"
+                                                                                            style="font-size: 20px;color: whitesmoke;"
+                                                                                            aria-hidden="true"></i></li>
             </ul>
         </div>
         <div class="col-md-4 footer-grid w3-hover-text-green">
             <h4 style="font-size: medium;" class="w3-text-white">Social Media</h4>
             <ul>
-                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-facebook-official" aria-hidden="true"></i>Facebook</a></li>
-                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-twitter-square" aria-hidden="true"></i>Twitter</a></li>
-                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-facebook-official" aria-hidden="true"></i>Facebook</a>
+                </li>
+                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-twitter-square" aria-hidden="true"></i>Twitter</a>
+                </li>
+                <li><a href="#" class="w3-hover-text-green"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a>
+                </li>
 
             </ul>
         </div>
         <div class="footer-bottom">
             <div class="copy-right">
                 <p> &copy; 2017 NevoGas. All Rights Reserved | Design by <a href=#" class="w3-text-green">
-                    XpresSoft_Ng | </a> <a href="http://aauaforum.com/dev.php" class="w3-hover-text-green">Developers</a> </p>
+                    XpresSoft_Ng | </a> <a href="http://aauaforum.com/dev.php"
+                                           class="w3-hover-text-green">Developers</a></p>
             </div>
         </div>
     </div>

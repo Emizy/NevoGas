@@ -385,7 +385,7 @@ def gas_repair(request):
                         gas.fname = fname1
                         gas.phone = user_phone
                         gas.location = user_loc
-                        gas.location = user_addr
+                        gas.address = user_addr
                         gas.cooker = user_cooker
                         gas.descrip = user_desp
                         gas.image1 = user_image1
@@ -399,10 +399,8 @@ def gas_repair(request):
             else:
                 messages.error(request, 'Name can not be empty')
                 return redirect('/gas_repair/')
-
-
         else:
-            context = {'err': "Order Not Successfully Submitted."}
+            context = {'err': "Image can't be Empty"}
             return redirect('/gas_repair/', context)
 
 
@@ -421,6 +419,41 @@ def gas_acc(request):
             context = {'msg': "No stock available", }
             template = 'index.html'
             return render(request, template, context)
+
+def repair_order(request):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'GET':
+        try:
+            repair = GasRepair.objects.all()
+        except:
+            repair = None
+        if repair != None:
+            context = {
+                'orders':repair,
+            }
+            templates = 'repair_order.html'
+            return render(request,templates,context)
+        elif repair == None:
+            messages.error(request, 'Gas-Repair Order Empty')
+            return redirect(request.META.get('HTTP_REFERRER'))
+
+
+def repair_details(request,order_id):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'GET':
+        try:
+            repair = GasRepair.objects.get(id=order_id)
+        except:
+            repair = None
+        if repair:
+            context = {
+                'orderD':repair,
+            }
+            templates = 'repair_details.html'
+            return render(request,templates,context)
+        else:
+            messages.error(request, 'Nothing to Show')
+            return redirect(request.META.get('HTTP_REFERRER'))
 
 
 def test(request):

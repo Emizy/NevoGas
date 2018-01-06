@@ -1,0 +1,69 @@
+{% extends 'ms.html' %}
+{% load static %}
+{% block head %}
+    <title>GAS-REPAIR - Order</title>
+{% endblock %}
+{% block content %}
+    <style>
+        .con {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow-x: hidden !important;
+        }
+
+    </style>
+          {% if messages %}
+                {% for message in messages %}
+                    <div id="alertBox" class="w3-{{ message.tags }}">
+                        <button id="bannerClose" class="w3-right w3-text-black w3-large"
+                                onclick="closeModal('alertBox')"
+                                style="background-color: transparent; border: none;">&times;
+                        </button>
+                        <div class="w3-center w3-green">
+                            <label id="alert" class="w3-text-white w3-large"
+                                   style="font-size: 5px;">{{ message }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+{% if orders %}
+    <div class="w3-bar w3-green w3-border w3-border-white w3-round">
+        <div class="w3-bar-item" style="text-align: center;color:white;">SHOW GAS-REPAIR ORDER</div>
+    </div>
+    <div class="table-responsive">
+        <table class="table con">
+            <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Fullname</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th> Locations</th>
+                <th>Address</th>
+                <th>Views</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for o in orders %}
+                <tr>
+                    <td>{{ o.id }}</td>
+                    <td>{{ o.fname }}</td>
+                    <td>{{ o.phone }}</td>
+                    <td>{{ o.email }}</td>
+                    <td>{{ o.location }}</td>
+                    <td>{{ o.address }}</td>
+                    <td>
+                        <a type="button" class="w3-btn w3-green w3-text-white" href="{% url 'repair_details' o.id %}"
+                           name="">
+                            View Details
+                        </a>
+                    </td>
+                </tr>
+                <div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+{% endblock %}

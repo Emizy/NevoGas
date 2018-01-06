@@ -4,7 +4,6 @@
 <title>NevoGas</title>
 {% endblock %}
 {% block content %}
-
     {% if messages %}
         {% for message in messages %}
             <div id="alertBox" class="w3-{{ message.tags }}">
@@ -28,10 +27,7 @@
             <a href="{% url 'gas_repair' %}" class="w3-button w3-hover-green w3-text-green w3-border w3-border-green">ORDER FOR GAS REPAIR <i
                         class="fa fa-cart-arrow-down" aria-hidden="true"></i> </a>
         </div>
-    </div>
-
-
-    <br>
+    </div><br>
     <div class="container">
         {% for i in sql1 %}
             <div class="panel panel-default" style=" display: block;margin: 0 auto;">
@@ -40,9 +36,9 @@
                         <img src="{{ i.image.url }}" alt="pics"
                              class="img-responsive img-hover" style="height: 200px;width: 250px;">
                     </div>
-                    <h5 class="w3-center" style="font-style: normal;font-size: medium; text-align: justify;display: block">
-                        Kindly enter the number of Kg you want to fill </h5>
-                    <h5 id="t" style="font-style: normal;">#{{ i.price }} per 1kg </h5>
+                    <h5 class="w3-center w3-text-green" style="font-style: normal;font-size: medium; text-align: justify;display: block">
+                        <strong>Kindly enter the number of Kg you want to fill</strong> </h5>
+                    <h5 id="t" style="font-style: normal;"><strong>#{{ i.price }} per 1kg</strong> </h5>
                     <div class="row">
                         <div>
                             <div id="{{ i.id }}_csrf_holder">
@@ -63,10 +59,6 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
-
-
-
-    <br>
+    </div><br>
 
 {% endblock %}
