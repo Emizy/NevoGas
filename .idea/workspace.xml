@@ -21,8 +21,8 @@
       <file leaf-file-name="repair_details.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/repair_details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="460" column="59" lean-forward="false" selection-start-line="460" selection-start-column="59" selection-end-line="460" selection-end-column="59" />
+            <state relative-caret-position="-409">
+              <caret line="481" column="55" lean-forward="false" selection-start-line="481" selection-start-column="55" selection-end-line="481" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -31,9 +31,11 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="139" column="57" lean-forward="true" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="119">
+              <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+              <folding>
+                <marker date="1515279852982" expanded="true" signature="3692:3926" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -406,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515268183489</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Second">
+      <created>1515278772559</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1515278772559</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -488,7 +497,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
             <element signature="e#257#595#0" expanded="false" />
             <element signature="e#624#1324#0" expanded="false" />
             <element signature="e#1353#2106#0" expanded="false" />
@@ -786,7 +795,7 @@
         <state relative-caret-position="316">
           <caret line="426" column="44" lean-forward="true" selection-start-line="426" selection-start-column="44" selection-end-line="426" selection-end-column="44" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
             <element signature="e#257#595#0" expanded="false" />
             <element signature="e#624#1324#0" expanded="false" />
             <element signature="e#1353#2106#0" expanded="false" />
@@ -870,17 +879,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/repair_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="460" column="59" lean-forward="false" selection-start-line="460" selection-start-column="59" selection-end-line="460" selection-end-column="59" />
+        <state relative-caret-position="-409">
+          <caret line="481" column="55" lean-forward="false" selection-start-line="481" selection-start-column="55" selection-end-line="481" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NevoGas/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="139" column="57" lean-forward="true" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding>
+            <marker date="1515279852982" expanded="true" signature="3692:3926" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
