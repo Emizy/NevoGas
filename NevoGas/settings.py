@@ -84,19 +84,19 @@ WSGI_APPLICATION = 'NevoGas.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'NevoGas',
-        'USER': 'NevoGold',
-        'PASSWORD': 'ayo2012',
-    }
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'NevoGas$Gas',
-    #     'USER': 'NevoGas',
-    #     'PASSWORD': 'joseph2012',
-    #     'HOST': 'Madonna.mysql.pythonanywhere-services.com'
+    #     'NAME': 'NevoGas',
+    #     'USER': 'NevoGold',
+    #     'PASSWORD': 'ayo2012',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'NevoGas$Gas',
+        'USER': 'NevoGas',
+        'PASSWORD': 'joseph2012',
+        'HOST': 'Madonna.mysql.pythonanywhere-services.com'
+    }
 }
 
 
@@ -136,19 +136,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 # #offline setting
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-MEDIA_URL = '/media/'
-
-#online setting
 # STATIC_URL = '/static/'
-# # STATICFILES_DIRS = [os.path.join(BASE_DIR,  'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+# TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 #
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #
 # MEDIA_URL = '/media/'
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+#online setting
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR,  'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
