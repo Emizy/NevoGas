@@ -1,0 +1,21 @@
+{% extends 'emoh.html' %}
+<!--login-->
+{% load staticfiles %}
+{% block content %}
+
+    <div class="login">
+        <div class="main-agileits">
+            <div class="form-w3agile">
+                {% if success %}
+                <div class="w3-panel w3-green w3-card-4">
+                    <p class=" w3-text-white">Password Reset Successfully</p>
+                </div>
+                    <div class="w3-center">
+                        <a class="w3-btn w3-green w3-center" href="{% url 'Adminlog' %}">Login</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

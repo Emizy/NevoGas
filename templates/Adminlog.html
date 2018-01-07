@@ -21,11 +21,6 @@
             <h3>Login</h3>
             <form action="#" method="post">
                 {% csrf_token %}
-                {% if errormessage %}
-                            <script>
-                            alert(errormessage);
-                            </script>
-                        {% endif %}
                 <div class="key">
                     <i class="fa fa-envelrope" aria-hidden="true"></i>
                     <input type="text" value="Username" name="Username" onfocus="this.value = '';"
@@ -38,11 +33,13 @@
                            onblur="if (this.value == '') {this.value = 'Password';}" required="" class="form-control">
                     <div class="clearfix"></div>
                 </div>
-                <input type="submit" value="Login" class="w3-green">
+            <div class="w3-center">
+                <input type="submit" value="Login" class="w3-btn w3-green w3-center">
+            </div>
             </form>
         </div>
         <div class="forg">
-            <a href="#" class="forg-left w3-hover-text-green">Forgot Password</a>
+            <a href="{% url 'forget_pass' %}" class="forg-left w3-hover-text-green">Forgot Password</a>
             <a href="{% url 'Adminreg' %}" class="forg-right w3-hover-text-green">Register</a>
             <div class="clearfix"></div>
         </div>

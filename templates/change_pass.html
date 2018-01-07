@@ -1,0 +1,42 @@
+{% extends 'emoh.html' %}
+<!--login-->
+{% load staticfiles %}
+{% block content %}
+
+    <div class="login">
+        <div class="main-agileits">
+            <div class="form-w3agile">
+                <h3>Change Password</h3>{% if messages %}
+                {% for message in messages %}
+                    <div id="alertBox" class="w3-{{ message.tags }}">
+                        <button id="bannerClose" class="w3-right w3-text-black w3-large "
+                                onclick="closeModal('alertBox')"
+                                style="background-color: transparent; border: none;">&times;
+                        </button>
+                        <div class="w3-center w3-blue">
+                            <label id="alert" class="w3-text-white w3-large">{{ message }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+                <div class="w3-panel w3-green w3-card-4">
+                    <p class=" w3-text-white">Enter your new password</p>
+                </div>
+                <form action="#" method="post">
+
+                    {% csrf_token %}
+                    <div class="key">
+                        <i class="fa fa-envelrope" aria-hidden="true"></i>
+                        <input type="text" name="pass" placeholder="New Password" required
+                               class="form-control">
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="w3-center">
+                        <input type="submit" value="Change" class="w3-btn w3-green w3-center">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -7,7 +7,6 @@ from django.shortcuts import render, redirect, render_to_response
 from Gas.models import *
 
 
-
 def index(request):
     assert isinstance(request, HttpRequest)
     if request.method == "GET":
@@ -318,6 +317,7 @@ def Adminlog(request):
                 templates = 'adminpage.html'
                 request.session['userid'] = sql.id
                 request.session['username'] = sql.Username
+                print(sql.Password)
                 return render(request, templates, context)
         else:
             print('am here')
@@ -379,20 +379,20 @@ def gas_repair(request):
 
             if fname1 != None:
                 match = re.match("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", user_email)
+                                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", user_email)
                 if match != None:
-                        gas.email = user_email
-                        gas.fname = fname1
-                        gas.phone = user_phone
-                        gas.location = user_loc
-                        gas.address = user_addr
-                        gas.cooker = user_cooker
-                        gas.descrip = user_desp
-                        gas.image1 = user_image1
-                        gas.image2 = user_image2
-                        gas.save()
-                        messages.success(request, 'Order Successfully Submitted,Kindly wait for our call.Thanks')
-                        return redirect('/gas_repair/')
+                    gas.email = user_email
+                    gas.fname = fname1
+                    gas.phone = user_phone
+                    gas.location = user_loc
+                    gas.address = user_addr
+                    gas.cooker = user_cooker
+                    gas.descrip = user_desp
+                    gas.image1 = user_image1
+                    gas.image2 = user_image2
+                    gas.save()
+                    messages.success(request, 'Order Successfully Submitted,Kindly wait for our call.Thanks')
+                    return redirect('/gas_repair/')
                 else:
                     messages.error(request, 'Invalid Email')
                     return redirect('/gas_repair/')
@@ -420,6 +420,7 @@ def gas_acc(request):
             template = 'index.html'
             return render(request, template, context)
 
+
 def repair_order(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'GET':
@@ -429,16 +430,16 @@ def repair_order(request):
             repair = None
         if repair != None:
             context = {
-                'orders':repair,
+                'orders': repair,
             }
             templates = 'repair_order.html'
-            return render(request,templates,context)
+            return render(request, templates, context)
         elif repair == None:
             messages.error(request, 'Gas-Repair Order Empty')
             return redirect(request.META.get('HTTP_REFERRER'))
 
 
-def repair_details(request,order_id):
+def repair_details(request, order_id):
     assert isinstance(request, HttpRequest)
     if request.method == 'GET':
         try:
@@ -447,20 +448,78 @@ def repair_details(request,order_id):
             repair = None
         if repair:
             context = {
-                'orderD':repair,
+                'orderD': repair,
             }
             templates = 'repair_details.html'
-            return render(request,templates,context)
+            return render(request, templates, context)
         else:
             messages.error(request, 'Nothing to Show')
             return redirect(request.META.get('HTTP_REFERRER'))
+
+
+def forget_pass(request):
+    assert isinstance(request, HttpRequest)
+    if request.method == 'GET':
+        context = locals()
+        templates = 'forget_pass.html'
+        return render(request, templates, context)
+    if request.method == 'POST':
+        user_name = request.POST.get('Username')
+        try:
+            user = adminreg.objects.get(Username=user_name)
+        except:
+            user = None
+        request.session['username'] = user.Username
+        request.session['userid'] = user.id
+        if user:
+            messages.error(request, 'Username Verified ,Kindly Enter Your New Password')
+            return redirect('/change_pass/', request.session['username'], request.session['userid'])
+        else:
+            messages.error(request, 'Username Not Verified')
+            return redirect(request.META.get('HTTP_REFERRER'))
+
+
+def change_pass(request):
+    if request.method == 'GET':
+        context = locals()
+        templates = 'change_pass.html'
+        return render(request, templates, context)
+    if request.method == 'POST':
+        rest_pass = request.POST.get('pass')
+        user = request.session['username']
+        userid = request.session['userid']
+        try:
+            u_pass = adminreg.objects.get(Username=user)
+        except:
+            u_pass = None
+        if u_pass:
+            u_pass.Password = createHash(rest_pass)
+            i = u_pass.Password
+            u_pass.save()
+            context = {
+                'success': "Password Reset Successfully"
+            }
+            templates = 'success.html'
+            return render(request, templates, context)
+        else:
+            context = {
+                'errmsg': "Password Reset Not Successfully try Again",
+            }
+            return redirect('/forget_pass/', context)
+
+
+def success(request):
+    if request.method == 'GET':
+        context = locals()
+        templates = 'success.html'
+        return render(request, templates, context)
 
 
 def test(request):
     if request.method == 'GET':
         context = locals()
         templates = 'test.html'
-        return render(request,templates,context)
+        return render(request, templates, context)
     elif request.method == 'POST':
         form = json.loads(request.body.decode(encoding='UTF-8'))
         name = form['name']
@@ -469,6 +528,6 @@ def test(request):
         print(name)
         print(email)
         print(phone)
-        context=locals()
+        context = locals()
         templates = 'test.html'
         return redirect(request.META.get('HTTP_REFERRER'))

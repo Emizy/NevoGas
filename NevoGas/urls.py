@@ -26,6 +26,9 @@ urlpatterns = [
                   url(r'^Adminreg/', views.Adminreg, name="Adminreg"),
                   url(r'^Adminlog/', views.Adminlog, name="Adminlog"),
                   url(r'^Adminlogout/', views.Adminlogout, name="Adminlogout"),
+                  url(r'^forget_pass/', views.forget_pass, name="forget_pass"),
+                  url(r'^change_pass/', views.change_pass, name="change_pass"),
+                  url(r'^success/', views.success, name="success"),
                   # url(r'^test/', views.test, name="test"),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
